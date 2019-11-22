@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="keywords" content="Southern Sunshine and Roses, artist, photographer, antique hunter, refurbisher">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Southern Sunshine and Roses</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/angular.bootstrap/1.2.2/ui-bootstrap.min.js"></script>
+  <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Hind&subset=latin,devanagari" rel="stylesheet" type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dkjcddqy0/image/upload/c_scale,q_100,w_196/v1473823966/favicon-196x196_p6cghv.png" sizes="196x196" />
+  <!-- load bootstrap and fontawesome via CDN -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+  <link rel="stylesheet" href="/stylesheets/captions.css"/>
+  <link rel="stylesheet" href="/stylesheets/lightbox.css"/>
+  <link rel="stylesheet" href="/stylesheets/sakura.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/type_writer.css"/>
+  <!-- Google adsense code -->
+  <!--Prevent favicon 404-->
+  <!--<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> -->
+  <!--<link rel="stylesheet" href="css/lightbox.css"/>-->
+</head>
+
+<body ng-controller="mainController">
+
+<!-- HEADER AND NAVBAR -->
+
+<div class="page-header no-margin">
+  <div id="header_text_div">
+    <div class="logo_img">
+      <img src="humm_burned.png" alt="Sunshine and Roses logo of a humming bird" class="img-responsive">
+    </div>
+    <div>
+      <h1>Southern Sunshine & Roses</h1>
+    </div>
+  </div>
+</div>
+<div id="nav-wrapper">
+  <nav class="navbar navbar-default navbar-static-top site-navbar" id="nav" role="navigation">
+    <div class="container"> 
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">    
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse">  
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="/blog"><i class="fa fa-pencil"></i> Blog</a></li>
+          <li><a href="/about"><i class="fa fa-shield"></i> About</a></li>
+          <li><a href="/contact"><i class="fa fa-comment"></i> Contact</a></li>
+          <li><a href="/gallery"><i class="fa fa-picture-o"></i> Gallery</a></li>
+          <li><a href="/terms"><i class="fa fa-file-text" aria-hidden="true"></i> Terms of Use</a></li>
+        </ul>
+      </div>  
+    </div>
+  </nav>
+</div>
+
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main">
+
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+
+        <div ng-view></div>  
+    </div>
+
+<!-- Adding Footer-->
+<footer class="site-footer navbar-fixed-bottom ">
+    <div class= "container">
+        <div class="navbar-text pull-left positon-footer-text footer_text">
+          <span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2018 Southern Sunshine & Roses
+        </div>
+        <div class="navbar-text pull-right footer-social">
+          <a href="https://www.etsy.com/shop/SouthernSunshineRose" target="_blank"><i class="fa fa-etsy fa-2x"></i></a>
+          <a href="https://www.facebook.com/southernsunshineandroses/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+          <a href="https://www.pinterest.com/southernsunshineandroses/" target="_blank"><i class="fa fa-pinterest fa-2x"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/image-caption.js" type="text/javascript"></script>
+<script src="js/viewportchecker.js"></script>
+
+
+</body>
+</html>
