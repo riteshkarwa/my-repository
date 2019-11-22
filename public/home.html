@@ -1,0 +1,71 @@
+<div class="container">
+  <p class="blog-text add-color">
+    Welcome to Southern Sunshine and Roses. Thank you very much for stopping by, the website is a work in progress so any improvement tips are always welcomed. Head over to the about page to find more about me. I "refresh" furniture, find worn out, outdated wooden furniture and use decorative paint, woodworking skills and finishing techniques to transform them into beautiful masterpieces. Do check out my work, I have uploaded pictures of my work in the gallery section. Giving new life to old furniture pieces is my passion, it gives me peace of mind and makes me happy. We are constantly striving to update and make the website easier to use. I would love to get your feedback as I am just starting out on my new adventure. If you have any questions and concerns, shoot me a message on Facebook.
+    <!--<div id="typewriter_id" class="typewriter add-color blog-text"> -->
+    <div id="typewriter_id" class="add-color blog-text">
+      <p>Yours &nbsp;truly,</p> 
+    </div>
+  </p>
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <!--<img src="https://res.cloudinary.com/dkjcddqy0/image/upload/v1463881077/paint_me9sgu.jpg" alt="Painting on a Sunday Morning" class="img-responsive img-circle logo imagedropshadow"/>-->
+        <img onload="fadeIn(this)" src="https://res.cloudinary.com/dkjcddqy0/image/upload/v1510632650/23600973_10211213494155050_426846348_o_ayaa32.jpg" alt="Southern Sunshine and Roses logo image used on Etsy/Chairish display link" class="img-responsive img-thumbnail logo imagedropshadow"/>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+
+</div>
+<style type="text/css">
+  .img-circle{
+    display:none;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){  
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+
+    if($(window).width() > 739) {      
+      //Add your javascript for large screens here
+      $('#typewriter_id').addClass('typewriter')
+    } 
+    else {
+      //Add your javascript for small screens here 
+      $(window).scroll(function(){
+
+        if (isScrolledIntoView('#typewriter_id') === true) {
+            $('#typewriter_id').addClass('typewriter')
+        }
+
+      });
+    }
+
+    window.fadeIn = function(obj) {
+      $(obj).fadeIn(1000);
+    }
+
+    
+     //var colors=["red","orange","blue","#FFE303", "green" ,"#4b0082", "#9B30FF"];
+     var colors = ["#333"];
+     var random_color= colors[Math.floor(Math.random() * colors.length)];
+    
+    $('.add-color').html(function (i, text) {
+      return $.map(text.split(' '), function (word) {
+         return '<span style="color:'
+             + random_color
+             + '">' + word + '</span>';
+      }).join(' ');
+    });
+});
+</script>
