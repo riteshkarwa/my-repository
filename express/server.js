@@ -14,9 +14,15 @@ router.get('/', (req, res) => {
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 router.post('/', (req, res) => res.json({ postBody: req.body }));
 
+app.get('*', function(request, response) {
+  //response.render('pages/index');
+  response.sendFile(__dirname +'/public/index1.html');
+});
+
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
+app.use(express.static(__dirname + '/public'));
+//app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 module.exports = app;
 module.exports.handler = serverless(app);
