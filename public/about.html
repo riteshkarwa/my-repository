@@ -1,0 +1,85 @@
+<!--about.html-->
+<div class="media">
+	<div class="media-left media-middle">
+    <a href="#" class="ignore-click">
+			<img onload="fadeIn(this)" class="media-object img-circle pull-left img-class fadein_image" src="https://res.cloudinary.com/dkjcddqy0/image/upload/v1465082221/photo_y3c3bb.jpg" alt="Chelsea Felter founder of Southern Sunshine & Roses">
+		</a>
+	</div>
+	<div class="media-body">
+		<h3 class="media-heading">Hey ya'll</h3>
+		<p class= "media-paragraph">
+			I’m Chelsea Felter, I am from Mckinney,Texas. I currently live in sunny Southern California. I am working on getting my Business degree from Texas Women University. Go Pioneers! I am an avid artist, photographer, antique hunter and refurbisher. I love to create and upcycle. It's in my genes. I come from a long line of strong southern women who taught me the value of taking care of things and people. The power of giving, creating and loving. My website is a homage to them to share what I have learned and am still learning from them. Since I was a child the most important lesson I learned from them was that life is not always sunshine and roses. However, I can choose to see the beauty in everything. I look forward to showing ya'll what can be beautiful again with a little hard work, and a lot of love.
+		</p>
+	</div>
+</div>
+
+<!-- Things I am good at-->
+<div class="container">
+	<h2 class="things">Things that I <span class="fa fa-heart">&nbsp;</span>to do</h2>
+	<hr/>
+	<div class="row">
+		<!-- 1st row -->
+		<div class="col-md-4 col-sm-6 col-xs-12" id="polaroid">
+			<figure>
+			<!--<figure class="embed reveal embed dark medium">-->
+				<a href="#" class="ignore-click">
+					<img onload="fadeIn(this)" src="https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882099/chalk_kpl9tk.jpg" alt="Annie Sloan Chalk Paint" height="200px" width="300px" class="img-responsive fadein_image">
+					<figcaption>
+						Annie Sloan Chalk Paint
+					</figcaption>
+				</a>
+			</figure>
+		</div>
+		<!-- 2nd row -->
+		<div class="col-md-4 col-sm-6 col-xs-12" id="polaroid">
+			<figure class="right-tape">	
+			<!--<figure class="embed reveal embed dark medium">-->
+				<a href="#" class="ignore-click">
+					<img onload="fadeIn(this)" src="https://res.cloudinary.com/dkjcddqy0/image/upload/v1465081955/make-up_ddrzbu.jpg" alt="make-up kit" height="200px" width="300px" class="img-responsive fadein_image">
+					<figcaption>
+						Beauty Pile
+					</figcaption>
+				</a>
+			</figure>
+		</div>
+		<!-- 3rd row -->
+		<div class="col-md-4 col-sm-6 col-xs-12" id="polaroid">
+			<figure>
+			<!--<figure class="embed reveal embed dark medium">-->
+				<a href="#" class="ignore-click">
+					<img onload="fadeIn(this)" src="https://res.cloudinary.com/dkjcddqy0/image/upload/v1473914781/yoga_s3mdrx.jpg" alt="yoga at sunshine" height="200px" width="300px" class="img-responsive fadein_image">
+					<figcaption>
+						Yoga Time
+					</figcaption>
+				</a>
+			</figure>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // $('.container').imagesLoaded()
+    // .done( function( instance ) {
+    //   console.log('all images successfully loaded');
+    // });
+    window.fadeIn = function(obj) {
+      $(obj).fadeIn(1000);
+    }
+
+    $(".ignore-click").click(function(){
+        return false;
+    });
+  });
+</script>
+
+<style type="text/css">
+
+a:hover{
+  cursor:default;
+}
+.fadein_image{ 
+    display:none;
+}
+
+</style>
