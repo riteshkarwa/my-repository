@@ -3,7 +3,7 @@
   functions = "functions"
 
 [[redirects]]
-  from = "/*"
+  from = "/"
   to = "/index.html"
   status = 301
   force = true
