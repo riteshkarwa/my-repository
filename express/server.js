@@ -24,7 +24,7 @@ app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use(express.static(__dirname + '/public'));
 app.get('*', function(request, response) {
   //response.render('pages/index');
-  response.sendFile(__dirname +'/public/index1.html');
+  response.sendFile(__dirname +'/public/index.html');
 });
 //app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
