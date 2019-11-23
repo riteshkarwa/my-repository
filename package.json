@@ -5,7 +5,7 @@
   "main": "functions/server.js",
   "scripts": {
     "build": "netlify-lambda build express",
-    "start": "node local-server.js"
+    "start": "nodemon local-server.js"
   },
   "repository": {
     "type": "git",
@@ -19,15 +19,14 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/riteshkarwa/my-repository.git",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "netlify-lambda": "^1.6.3",
-    "nodemon": "^1.19.2",
-    "serverless-http": "^2.3.0",
     "angular": "1.7.x",
     "angular-route": "1.7.x",
+    "body-parser": "^1.19.0",
     "bootstrap": "3.3.x",
-    "mysql": "^2.5.4"
+    "express": "^4.17.1",
+    "mysql": "^2.5.4",
+    "netlify-lambda": "^1.6.3",
+    "nodemon": "^1.19.2",
+    "serverless-http": "^2.3.0"
   }
 }
-

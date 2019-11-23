@@ -16,9 +16,11 @@ app.use(function(req, res, next) {
 });
 
 
-app.get('*', function(request, response) {
-  response.sendFile(__dirname +'/public/index1.html');
+app.get('/', function(request, response) {
+  //response.render('pages/index');
+  response.sendFile(path.join(__dirname, '../public/index.html'));
 });
+
 
 module.exports = app;
 module.exports.handler = serverless(app);
