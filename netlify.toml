@@ -4,17 +4,17 @@
 
 [[redirects]]
   from = "/*"
-  to = "index.html"
+  to = "/index.html"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog"
-  to = "https://southernsunshineandroses.netlify.com/blog.html"
+  to = "/blog.html"
   status = 301
   force = true
 [[redirects]]
-  from = "/about"
+  from = "https://southernsunshineandroses.netlify.com/about"
   to = "https://southernsunshineandroses.netlify.com/about.html"
   status = 301
   force = true
