@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/index.html'), function(err) {
+  res.sendFile(path.join(__dirname, 'public/index.html'), function(err) {
+    console.log(__dirname)
     if (err) {
       res.status(500).send(err)
     }
