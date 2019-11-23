@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
+app.use('/', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
 
 module.exports = app;
 module.exports.handler = serverless(app);
