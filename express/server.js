@@ -20,6 +20,7 @@ app.get('*', function(request, response) {
 });
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use(express.static(__dirname + '/public'));
 //app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
