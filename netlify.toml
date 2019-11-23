@@ -3,11 +3,11 @@
   functions = "functions"
 [[redirects]]
   from = "/blog"
-  to = "/blog.html"
+  to = "/blog"
   status = 301
   force = true
 [[redirects]]
-  from = "https://southernsunshineandroses.netlify.com/about"
-  to = "https://southernsunshineandroses.netlify.com/about.html"
+  from = "/about"
+  to = "/about"
   status = 301
   force = true
