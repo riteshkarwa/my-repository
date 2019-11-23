@@ -15,12 +15,10 @@ app.use(function(req, res, next) {
   next();
 });
 
-
+app.use(express.static('public'))
 app.get('/', function(request, response) {
-  //response.render('pages/index');
-  response.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile('index.html', {root: './public'});
 });
-
 
 module.exports = app;
 module.exports.handler = serverless(app);
