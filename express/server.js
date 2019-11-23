@@ -16,7 +16,7 @@ router.post('/', (req, res) => res.json({ postBody: req.body }));
 
 app.get('*', function(request, response) {
   //response.render('pages/index');
-  response.sendFile(__dirname +'/public/index1.html');
+  response.sendFile(__dirname +'/public/index.html');
 });
 
 app.use(bodyParser.json());

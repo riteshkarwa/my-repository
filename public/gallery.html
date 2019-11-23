@@ -1,0 +1,80 @@
+<div class="container">
+	<h1 class="alex_brush_font">Welcome to Southern Sunshine and Roses!!!</h1>
+	<div class="gallery">
+		<div class="row">
+			<div class ="col-md-3 col-sm-3 col-xs-8 picture-container adjust-pic" ng-repeat="image in images">
+				<div class="picture-body">
+					<a href="{{image.url}}" data-title="{{image.title}}" data-lightbox="cool_images">
+						<!--<img onload="fadeIn(this)" ng-src="{{image.url}}" vspace="10" class="img-responsive" height="200px" style="display:none;"/>-->
+            <img ng-src="{{image.url}}" vspace="10" class="img-responsive" height="200px"/> 
+					</a>				
+				</div>
+				<div class="picture-footer">
+					<div>
+						<a href ng-click="favorite(image);" class="gallery_href">
+							<i class="fa fa-heart" ng-show="image.been_liked"></i>
+							<i class="fa fa-heart" style="color:gray;" ng-hide="image.been_liked"></i>
+						</a> 
+						<span class="likes_count">
+							{{"\u00A0\u00A0"+image.likes}}
+						</span>
+						<span class="pin_it_class">
+							<a data-pin-do="buttonBookmark" data-pin-round="true" href="https://www.pinterest.com/pin/create/button/"><img class="pin_it_class_add" src="https://assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" /></a>
+						</span>
+                        <span class="gallery_image_title">
+                            {{"\u00A0\u00A0"+image.title}}
+                        </span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+  .pin_it_class_add{
+    position: relative;
+    top: -3px;
+  }
+  .pin_it_class{
+    position: relative;
+    top: 0px;
+  }
+
+</style>
+
+<script type="text/javascript">
+
+
+  $(document).ready(function(){
+    
+    $('container').imagesLoaded()
+    .done( function( instance ) {
+      var img = $('.picture-container').find('img');
+        img.hide();
+        img.each(function(i) {
+        if (this.complete) {
+            $(this).fadeIn(1000);
+        } else {
+            $(this).load(function() {
+                $(this).fadeIn(1000);
+            });
+          }
+        });
+    });
+    
+	var myDate = new Date();
+    var hrs = myDate.getHours();
+    var greet;
+    if (hrs < 12){
+    	greet = 'Good Morning Sunshine';
+    }
+    else if (hrs >= 12 && hrs <= 17){
+    	greet = 'Good Afternoon Sweetheart';
+    }
+    else if (hrs >= 17 && hrs <= 24){
+    	greet = 'Honey, I know it\'s been a long day';
+    }
+    $(".alex_brush_font").prepend(greet+", ");
+	});
+</script>
