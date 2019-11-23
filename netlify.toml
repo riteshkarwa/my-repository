@@ -4,7 +4,7 @@
 
 [[redirects]]
   from = "/*"
-  to = "/public/index.html"
+  to = "index.html"
   status = 301
   force = true
 
