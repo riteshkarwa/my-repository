@@ -1,4 +1,20 @@
 [build]
   command = "npm install && npm run build"
   functions = "functions"
-  
+
+[[redirects]]
+  from = "/*"
+  to = "/public/index.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog"
+  to = "/public/blog.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/about"
+  to = "/public/about.html"
+  status = 301
+  force = true
