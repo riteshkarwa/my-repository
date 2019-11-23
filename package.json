@@ -23,7 +23,9 @@
     "netlify-lambda": "^1.6.3",
     "nodemon": "^1.19.2",
     "serverless-http": "^2.3.0",
-    "cors": "^2.8.4",
+    "angular": "1.7.x",
+    "angular-route": "1.7.x",
+    "bootstrap": "3.3.x"
     "mysql": "^2.5.4"
   }
 }
