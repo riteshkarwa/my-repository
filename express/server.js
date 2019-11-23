@@ -16,7 +16,9 @@ app.use(function(req, res, next) {
 });
 
 
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
+app.get('*', function(request, response) {
+  response.sendFile(__dirname +'/public/index1.html');
+});
 
 module.exports = app;
 module.exports.handler = serverless(app);
