@@ -16,8 +16,8 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static('public'))
-app.get('/', function(request, response) {
-  res.sendFile('index.html', {root: './public'});
+app.get('*', function(request, response) {
+  response.sendFile('index.html', {root: './public'});
 });
 
 module.exports = app;
