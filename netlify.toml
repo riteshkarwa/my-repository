@@ -10,11 +10,11 @@
 
 [[redirects]]
   from = "/blog"
-  to = "/public/blog.html"
+  to = "https://southernsunshineandroses.netlify.com/blog.html"
   status = 301
   force = true
 [[redirects]]
   from = "/about"
-  to = "/public/about.html"
+  to = "https://southernsunshineandroses.netlify.com/about.html"
   status = 301
   force = true
