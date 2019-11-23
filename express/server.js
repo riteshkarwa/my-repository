@@ -19,9 +19,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-
 app.use(express.static(__dirname + '/public'))
-app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 app.use('*', (req, res) => res.sendFile(path.join(__dirname, '/public/index.html')));
 
