@@ -138,6 +138,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
       //Get all likes 
       $http.get('/api/all_likes/')
         .then(function(likes) {
+            console.log(likes);
             $scope.images.forEach(function(img){
                 likes.data.forEach(function(like){
                     if (img.id === like.id) {
@@ -149,7 +150,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             })
 
             //console.log($scope.images);
-        }),(function(error) {
+        }).catch(function(error) {
             console.log('Error: ' + error);
         });
 
