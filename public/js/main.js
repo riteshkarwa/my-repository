@@ -138,16 +138,18 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
       //Get all likes 
       $http.get('/api/all_likes/')
         .then(function(likes) {
-            console.log('My object : ' + likes);
-            $scope.images.forEach(function(img){
+            console.log(likes);
+            for (var i = 0; i < likes.data.length; i++){
+                $scope.images.forEach(function(img){
                 likes.data.forEach(function(like){
-                    if (img.id === like.id) {
-                        img.likes = like.likes;
+                    if (img.id === likes.data[i].id) {
+                        img.likes = likes.data[i].likes;
                     } else if (!img.likes) {
                         img.likes = 0;
                     }
                 })
             })
+            }
 
             //console.log($scope.images);
         }).catch(function(error) {
