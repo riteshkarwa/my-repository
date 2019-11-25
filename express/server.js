@@ -57,8 +57,6 @@ app.get('*', function(request, response) {
   response.sendFile(path.resolve(__dirname, '../public')+'/index.html');
 });
 
-connection.end();
-
 module.exports = app;
 module.exports.handler = serverless(app);
 
