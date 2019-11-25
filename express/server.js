@@ -5,8 +5,9 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
-const cors = require('cors')
+const cors = require('cors');
 
+const router = express.Router();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -56,7 +57,7 @@ app.get('/api/all_likes', function(req, res) {
 console.log(path.resolve(__dirname, '../public'));
 
 app.use(express.static('./public'))
-
+app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.all('*', function(request, response, next) {
   //response.sendFile('index.html', {root: './public'});
   response.sendFile(path.resolve(__dirname, '../public')+'/index.html');
