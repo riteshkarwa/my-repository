@@ -50,12 +50,10 @@ app.get('/api/all_likes', function(req, res) {
 });
 
 app.use(express.static('public'))
-// app.get('*', function(request, response) {
-//   response.sendFile('index.html', {root: './public'});
-// });
-app.get('*', function(request, response) {
-  response.sendFile(path.resolve('public/index.html'));
+app.get('/*', function(request, response) {
+  response.sendFile('index.html', {root: './public'});
 });
+
 
 module.exports = app;
 module.exports.handler = serverless(app);
