@@ -23,6 +23,7 @@
     "angular-route": "1.7.x",
     "body-parser": "^1.19.0",
     "bootstrap": "3.3.x",
+    "cors": "^2.8.4",
     "express": "^4.17.1",
     "mysql": "^2.5.4",
     "netlify-lambda": "^1.6.3",
