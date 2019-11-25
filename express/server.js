@@ -55,7 +55,6 @@ app.use(express.static('./public'))
 app.get('*', function(request, response, next) {
   //response.sendFile('index.html', {root: './public'});
   response.sendFile(path.resolve(__dirname, '../public')+'/index.html');
-  next();
 });
 
 
