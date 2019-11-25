@@ -49,7 +49,7 @@ app.get('/api/all_likes', function(req, res) {
   });
 });
 
-app.use(express.static('public'))
+app.use(express.static('./public'))
 app.get('/*', function(request, response) {
   response.sendFile('index.html', {root: './public'});
 });
