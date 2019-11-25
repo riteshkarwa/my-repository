@@ -62,7 +62,7 @@ app.all('*', function(request, response, next) {
   //response.sendFile('index.html', {root: './public'});
   response.sendFile(path.resolve(__dirname, '../public')+'/index.html');
 });
-router.get('*', function(request, response, next) {
+router.get('/', function(request, response, next) {
   //response.sendFile('index.html', {root: './public'});
   response.sendFile(path.resolve(__dirname, '../public')+'/index.html');
 });
