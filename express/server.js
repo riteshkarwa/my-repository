@@ -52,7 +52,7 @@ app.get('/api/all_likes', function(req, res) {
 console.log(path.resolve(__dirname, '../public'));
 
 app.use(express.static('./public'))
-app.get('/*', function(request, response) {
+app.get('*', function(request, response) {
   //response.sendFile('index.html', {root: './public'});
   response.sendFile(path.resolve(__dirname, '../public')+'/index.html');
 });
