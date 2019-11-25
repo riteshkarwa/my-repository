@@ -3,5 +3,5 @@
   functions = "functions"
 [[redirects]]
   from = "/*"
-  to = "https://southernsunshineandroses.netlify.com/"
+  to = "/index.html"
   status = 200
