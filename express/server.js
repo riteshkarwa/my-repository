@@ -9,11 +9,11 @@ const mysql = require('mysql');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 // for local testing
 var connection = mysql.createConnection({
@@ -52,9 +52,10 @@ app.get('/api/all_likes', function(req, res) {
 console.log(path.resolve(__dirname, '../public'));
 
 app.use(express.static('./public'))
-app.get('/', function(request, response) {
+app.get('*', function(request, response, next) {
   //response.sendFile('index.html', {root: './public'});
   response.sendFile(path.resolve(__dirname, '../public')+'/index.html');
+  next();
 });
 
 
