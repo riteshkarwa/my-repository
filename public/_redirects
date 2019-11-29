@@ -6,3 +6,5 @@
 
 # Redirect with a 200
 /blog / 200
+
+/* / 200
