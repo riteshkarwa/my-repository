@@ -1,5 +1,8 @@
 # Redirect with a 302
 /my-redirect  /              302
 
-# Redirect with a 302
+# Redirect with a 200
 /my-200  /              200
+
+# Redirect with a 200
+/blog / 200
