@@ -1,0 +1,5 @@
+# Redirect with a 302
+/my-redirect  /              302
+
+# Redirect with a 302
+/my-200  /              200
