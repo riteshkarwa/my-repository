@@ -2,6 +2,9 @@
   command = "npm install && npm run build"
   functions = "functions"
 [[redirects]]
-  from = "/*"
+  from = "/blog"
   to = "/"
   status = 200
+  force = true
+  query = {path = ":path"}
+  
