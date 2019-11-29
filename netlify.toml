@@ -3,7 +3,8 @@
   functions = "functions"
 [[redirects]]
   from = "/blog"
-  to = "/flog"
+  to = "/*"
   status = 200
   force = true
+  query = {path = ":path"} #
   
