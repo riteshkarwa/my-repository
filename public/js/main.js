@@ -63,103 +63,99 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         $scope.message = 'Look! I am a terms of use page.';
     });
 
-    scotchApp.controller('galleryController', function($scope,$http) {
-      $scope.counts = [];
+    scotchApp.controller('galleryController', function($scope,$http) 
+    {
 
-      $scope.images = [
-        {
+        $scope.counts = [];
+
+        $scope.images = [
+            {
             id: 1,
             url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885824/frenchstand_dtiyhu.jpg",
             title: "French Provincial Night Stand"
+            },
+            {
+                id: 2,
+                url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882123/stand_mkbg5e.jpg",
+                title: "Adorable Side Table"
+            },
+            {
+                id: 3,
+                url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885212/midcentury_kxvnrs.jpg",
+                title: "Awesome Mid Century Table"
+            },
+            {
+                id: 4,
+                url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1474155614/2tier_oldgo9.jpg",
+                title: "French Provincial End Table"
+            },
+            {
+                id: 5,
+                url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882106/doggy_bed_u3jign.jpg",
+                title: "Doggy Bed"
+            },
+            {
+                id: 6,
+                url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463881943/breadbox_gxioq9.jpg",
+                title: "Bread Box"
+            },
+            {   
+                id:7,
+                url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1473479543/image_1_kzwonl.jpg",
+                title: "Piano Bench"
+            },
+            {
+                id:8,
+                url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1480115054/coffee_table_fpbrud.jpg",
+                title: "Coffee Table"
+            },
+            {
+                id:9,
+                url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1511933009/24251248_10211316135001007_1093863881_o_ezqau5.jpg",
+                title: "Radiant Prayer/Dinning Table"
+            },
+            {
+                id:10,
+                url:"https://res.cloudinary.com/dkjcddqy0/image/upload/q_100/v1512889763/25198672_10211398496099983_340813110_o_k5fxgk.jpg",
+                title: "Solid Cherry Night Stands"
+            },
+            {
+                id:11,
+                url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1524437998/31166904_10212423764531053_3514226770838552576_n_osyrmh.jpg",
+                title: "Solid Wood Study/Work Table"
+            },
+            {
+                id:12,
+                url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1531019940/36772328_10212926705784270_2315435320453103616_n_cgn34y.jpg",
+                title: "Gorgeous Uphostered Bench"
+            }
+        ]
 
-        },
-        {
-            id: 2,
-            url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882123/stand_mkbg5e.jpg",
-            title: "Adorable Side Table"
+        const readAll = () => {
+            return fetch('/.netlify/functions/likes-read-all').then((response) => {
 
-        },
-        {
-            id: 3,
-            url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885212/midcentury_kxvnrs.jpg",
-            title: "Awesome Mid Century Table"
-
-        },
-        {
-            id: 4,
-            url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1474155614/2tier_oldgo9.jpg",
-            title: "French Provincial End Table"
-
-        },
-        {
-            id: 5,
-            url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882106/doggy_bed_u3jign.jpg",
-            title: "Doggy Bed"
-
-        },
-        {
-            id: 6,
-            url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463881943/breadbox_gxioq9.jpg",
-            title: "Bread Box"
-
-        },
-        {   
-            id:7,
-            url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1473479543/image_1_kzwonl.jpg",
-            title: "Piano Bench"
-        },
-        {
-            id:8,
-            url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1480115054/coffee_table_fpbrud.jpg",
-            title: "Coffee Table"
-        },
-        {
-            id:9,
-            url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1511933009/24251248_10211316135001007_1093863881_o_ezqau5.jpg",
-            title: "Radiant Prayer/Dinning Table"
-        },
-        {
-            id:10,
-            url:"https://res.cloudinary.com/dkjcddqy0/image/upload/q_100/v1512889763/25198672_10211398496099983_340813110_o_k5fxgk.jpg",
-            title: "Solid Cherry Night Stands"
-        },
-        {
-            id:11,
-            url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1524437998/31166904_10212423764531053_3514226770838552576_n_osyrmh.jpg",
-            title: "Solid Wood Study/Work Table"
-        },
-        {
-            id:12,
-            url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1531019940/36772328_10212926705784270_2315435320453103616_n_cgn34y.jpg",
-            title: "Gorgeous Uphostered Bench"
-        }
-      ]
-
-
-    const readAll = () => {
-        return fetch('/.netlify/functions/todos-read-all').then((response) => {
-            return response.json()
-        })
-    }
-    console.log(readAll());
-
-      //Get all likes 
-      $http.get('/api/all_likes/')
-        .success(function(likes) {
-            $scope.images.forEach(function(img){
-                likes.forEach(function(like){
-                    if (img.id === like.id) {
-                        img.likes = like.likes;
-                    } else if (!img.likes) {
-                        img.likes = 0;
-                    }
-                })
+                return response.json()
             })
+        }
 
-            //console.log($scope.images);
-        }).error(function(error) {
-            console.log('Error: ' + error);
-        });
+        console.log(readAll());
+        // //Get all likes 
+        // $http.get('/api/all_likes/')
+        // .success(function(likes) {
+        //     $scope.images.forEach(function(img){
+        //         likes.forEach(function(like){
+        //             if (img.id === like.id) {
+        //                 img.likes = like.likes;
+        //             } else if (!img.likes) {
+        //                 img.likes = 0;
+        //             }
+        //         })
+        //     })
+
+        //     //console.log($scope.images);
+        // }).error(function(error) {
+        //     console.log('Error: ' + error);
+        // });
 
         $scope.favorite = function(image) {
             console.log(image.id);
