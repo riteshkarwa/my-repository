@@ -141,7 +141,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             return response.json()
         })
     }
-    console.log(readAll);
+    console.log(readAll());
 
       //Get all likes 
       $http.get('/api/all_likes/')
