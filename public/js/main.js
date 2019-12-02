@@ -142,12 +142,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 likes: 500
             }
         ]
-
-        fetch('/api/all_likes/')
-        .then(res =>{
-            console.log(res);
         
-        })
         //Get all likes 
         $http.get('/api/all_likes/')
         .success(function(likes) {
