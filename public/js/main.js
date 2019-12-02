@@ -131,33 +131,25 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             }
         ]
 
-        const readAll = () => {
-            return fetch('/.netlify/functions/likes-read-all').then((response) => {
-                console.log(response);
-                return response.json()
+
+
+        //Get all likes 
+        $http.get('/api/all_likes/')
+        .success(function(likes) {
+            $scope.images.forEach(function(img){
+                likes.forEach(function(like){
+                    if (img.id === like.id) {
+                        img.likes = like.likes;
+                    } else if (!img.likes) {
+                        img.likes = 0;
+                    }
+                })
             })
-        }
-        console.log(readAll());
 
-
-
-        // //Get all likes 
-        // $http.get('/api/all_likes/')
-        // .success(function(likes) {
-        //     $scope.images.forEach(function(img){
-        //         likes.forEach(function(like){
-        //             if (img.id === like.id) {
-        //                 img.likes = like.likes;
-        //             } else if (!img.likes) {
-        //                 img.likes = 0;
-        //             }
-        //         })
-        //     })
-
-        //     //console.log($scope.images);
-        // }).error(function(error) {
-        //     console.log('Error: ' + error);
-        // });
+            //console.log($scope.images);
+        }).error(function(error) {
+            console.log('Error: ' + error);
+        });
 
         $scope.favorite = function(image) {
             console.log(image.id);

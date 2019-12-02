@@ -6,17 +6,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const cors = require('cors');
-var faunadb = require('faunadb'),
-  q = faunadb.query;
-
-var adminClient = new faunadb.Client({
-  secret: 'fnADelDBMuACCcgEDMO-P6kUM_6xev8SoWicBj1Q'
-})
-
-adminClient.query(
-  q.Paginate(q.Database('num_of_likes'))
-)
-.then((ret) => console.log(ret))
 
 const router = express.Router();
 
@@ -52,7 +41,7 @@ connection.connect(function(err) {
 
 
 // Query Database to get all likes
-app.get('/api/all_likes', function(req, res) {
+router.get('/api/all_likes', function(req, res) {
   var results=[];
   
   //SQL Query > Select Data
@@ -66,8 +55,6 @@ app.get('/api/all_likes', function(req, res) {
     return res.json(rows);
   });
 });
-
-console.log(path.resolve(__dirname, '../public'));
 
 app.use(express.static('./public'))
 
