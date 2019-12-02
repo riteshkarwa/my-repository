@@ -2,7 +2,7 @@ import faunadb from 'faunadb'
 
 const q = faunadb.query
 const client = new faunadb.Client({
-  secret: "fnADelDBMuACCcgEDMO-P6kUM_6xev8SoWicBj1Q"
+  secret: 'fnADelDBMuACCcgEDMO-P6kUM_6xev8SoWicBj1Q'
 })
 
 exports.handler = (event, context, callback) => {
