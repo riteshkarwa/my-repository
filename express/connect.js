@@ -20,10 +20,20 @@ exports.handler = function (event, context, callback) {
       }
     }
     console.log('Connected as thread id: ' + connection.threadId);
-    return {
-          statusCode: 200,
-          body: JSON.stringify(err)
-        }
+    var results=[];
+  
+    //SQL Query > Select Data
+    connection.query("SELECT * FROM num_of_likes", function(err, rows, fields) {
+      if (err) throw err;
 
+      for (var r in rows){
+        console.log(rows[r]);
+        results.push(rows[r]);
+      } 
+      return {
+            statusCode: 200,
+            body: res.json(rows)
+          }
+    });
   });
 }
