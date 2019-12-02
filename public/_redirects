@@ -14,6 +14,6 @@
 /terms / 200
 
 # Redirect with a 200
-/api/all_likes /api/all_likes 200
+/api/all_likes / 200
 
 /* / 200
