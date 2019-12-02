@@ -16,7 +16,7 @@ exports.handler = function (event, context, callback) {
       console.error('Error connecting: ' + err.stack);
       return {
         statusCode: 400,
-        body: JSON.stringify(err)
+        body: err
       }
     }
     console.log('Connected as thread id: ' + connection.threadId);
@@ -32,7 +32,7 @@ exports.handler = function (event, context, callback) {
       } 
       return {
             statusCode: 200,
-            body: res.json(rows)
+            body: results
           }
     });
   });
