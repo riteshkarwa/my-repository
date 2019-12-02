@@ -7,7 +7,6 @@
     "build": "netlify-lambda build express",
     "start": "nodemon local-server.js",
     "start:lambda": "netlify-lambda serve express"
-
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,7 @@
     "cors": "^2.8.4",
     "express": "^4.17.1",
     "faunadb": "^0.2.4",
-    "mysql": "^2.5.4",
+    "mysql": "^2.15.0",
     "netlify-lambda": "^1.6.3",
     "nodemon": "^1.19.2",
     "serverless-http": "^2.3.0"
