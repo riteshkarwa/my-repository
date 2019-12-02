@@ -1,10 +1,8 @@
-/* code from functions/todos-read-all.js */
 import faunadb from 'faunadb'
-
 
 const q = faunadb.query
 const client = new faunadb.Client({
-  secret: process.env.FAUNADB_SECRET
+  secret: "fnADelDBMuACCcgEDMO-P6kUM_6xev8SoWicBj1Q"
 })
 
 exports.handler = (event, context, callback) => {
