@@ -137,6 +137,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             })
         }
 
+        console.log(readAll());
         var faunadb = require('faunadb'),
             q = faunadb.query
 
