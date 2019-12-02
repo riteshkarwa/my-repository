@@ -62,11 +62,6 @@ app.all('*', function(request, response, next) {
   response.sendFile(path.resolve(__dirname, '../public')+'/index.html');
 });
 
-router.get('/*', function(request, response, next) {
-  //response.sendFile('index.html', {root: './public'});
-  response.sendFile(path.resolve(__dirname, '../public')+'/index.html');
-});
-
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 module.exports = app;

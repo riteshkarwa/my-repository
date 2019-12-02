@@ -10,20 +10,18 @@ var connection = mysql.createConnection({
   });
 
 
-
-conn = connection.connect(function(err) {
-  if (err) {
-    console.error('Error connecting: ' + err.stack);
-  }
-  console.log('Connected as thread id: ' + connection.threadId);
-});
-
 exports.handler = function (event, context, callback) {
   
-  if (conn){
+    connection.connect(function(err) {
+    if (err) {
+      console.error('Error connecting: ' + err.stack);
+    }
+    console.log('Connected as thread id: ' + connection.threadId);
+    });
+    
     var results=[];
     //SQL Query > Select Data
-    conn.query("SELECT * FROM num_of_likes", function(err, rows, fields) {
+    connection.query("SELECT * FROM num_of_likes", function(err, rows, fields) {
       if (err) throw err;
 
       for (var r in rows){
@@ -35,7 +33,7 @@ exports.handler = function (event, context, callback) {
         body: JSON.stringify(results)
       }
     });
+};
 
-  }
-}
+
 
