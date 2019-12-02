@@ -1,11 +1,13 @@
 {
   "name": "netlify-express",
   "version": "0.0.1",
-  "description": "Example of how to deploy a Express.js Netlify app.",
+  "description": "SouthernSunshineRose website code",
   "main": "functions/server.js",
   "scripts": {
     "build": "netlify-lambda build express",
-    "start": "nodemon local-server.js"
+    "start": "nodemon local-server.js",
+    "start:lambda": "netlify-lambda serve express"
+
   },
   "repository": {
     "type": "git",
@@ -15,14 +17,14 @@
     "netlify",
     "express.js"
   ],
-  "author": "neverendingqs",
+  "author": "SouthernSunshineRose",
   "license": "Apache-2.0",
   "homepage": "https://github.com/riteshkarwa/my-repository.git",
   "dependencies": {
     "angular": "1.7.x",
     "angular-route": "1.7.x",
     "body-parser": "^1.19.0",
-    "bootstrap": "3.4.x",
+    "bootstrap": "^3.4.0",
     "cors": "^2.8.4",
     "express": "^4.17.1",
     "faunadb": "^0.2.4",

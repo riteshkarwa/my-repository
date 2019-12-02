@@ -16,13 +16,13 @@ exports.handler = function (event, context, callback) {
       console.error('Error connecting: ' + err.stack);
       return {
         statusCode: 400,
-        body: JSON.stringify(error)
+        body: JSON.stringify(err)
       }
     }
     console.log('Connected as thread id: ' + connection.threadId);
     return {
           statusCode: 200,
-          body: JSON.stringify(ret)
+          body: JSON.stringify(err)
         }
 
   });
