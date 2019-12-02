@@ -138,12 +138,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         }
 
         console.log(readAll());
-        var faunadb = require('faunadb'),
-            q = faunadb.query
-
-        var client = new faunadb.Client({ secret: 'fnADelDBMuACCcgEDMO-P6kUM_6xev8SoWicBj1Q' });
-
-        var helper = client.paginate(q.Match(q.Index('all_num_of_likes'), 'example-term'));
+        
         // //Get all likes 
         // $http.get('/api/all_likes/')
         // .success(function(likes) {
