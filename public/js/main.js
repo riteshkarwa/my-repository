@@ -132,7 +132,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         ]
 
         const readAll = () => {
-            return fetch('/.netlify/functions/todos-read-all'{
+            return fetch('/.netlify/functions/todos-read-all',{
               headers : { 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
