@@ -70,16 +70,16 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
 
         $scope.images = [
             {
-            id: 1,
-            url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885824/frenchstand_dtiyhu.jpg",
-            title: "French Provincial Night Stand",
-            likes: 100
+                id: 1,
+                url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885824/frenchstand_dtiyhu.jpg",
+                title: "French Provincial Night Stand",
+                likes: 100
             },
             {
                 id: 2,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882123/stand_mkbg5e.jpg",
                 title: "Adorable Side Table",
-                likes: 130
+                likes: 230
             },
             {
                 id: 3,
@@ -103,13 +103,13 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 id: 6,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463881943/breadbox_gxioq9.jpg",
                 title: "Bread Box",
-                likes: 300
+                likes: 180
             },
             {   
                 id:7,
                 url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1473479543/image_1_kzwonl.jpg",
                 title: "Piano Bench",
-                likes: 400
+                likes: 135
             },
             {
                 id:8,
@@ -121,28 +121,28 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 id:9,
                 url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1511933009/24251248_10211316135001007_1093863881_o_ezqau5.jpg",
                 title: "Radiant Prayer/Dinning Table",
-                likes: 200
+                likes: 260
             },
             {
                 id:10,
                 url:"https://res.cloudinary.com/dkjcddqy0/image/upload/q_100/v1512889763/25198672_10211398496099983_340813110_o_k5fxgk.jpg",
                 title: "Solid Cherry Night Stands",
-                likes: 520
+                likes: 125
             },
             {
                 id:11,
                 url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1524437998/31166904_10212423764531053_3514226770838552576_n_osyrmh.jpg",
                 title: "Solid Wood Study/Work Table",
-                likes: 600
+                likes: 210
             },
             {
                 id:12,
                 url:"https://res.cloudinary.com/dkjcddqy0/image/upload/v1531019940/36772328_10212926705784270_2315435320453103616_n_cgn34y.jpg",
                 title: "Gorgeous Uphostered Bench",
-                likes: 500
+                likes: 290
             }
         ]
-        
+
         //Get all likes 
         $http.get('/api/all_likes/')
         .success(function(likes) {
