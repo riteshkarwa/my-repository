@@ -40,7 +40,7 @@ connection.connect(function(err) {
 
 
 // Query Database to get all likes
-app.get('/api/all_likes', function(req, res) {
+router.get('/api/all_likes', function(req, res) {
   var results=[];
   
   //SQL Query > Select Data
