@@ -1,1 +1,1 @@
-# Making SSR website deployable to netlify
+# Making Southern Sunshine and Roses website deployable to netlify
