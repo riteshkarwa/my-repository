@@ -1,4 +1,3 @@
-'use strict';
 const mysql = require('mysql');
 
 
@@ -11,20 +10,33 @@ if (typeof connection === 'undefined'){
       password: "xNwMQh7jQ8"
       //port:"3306"
     });
-  connection.connect(function(err) {
-    if (err) {
-      console.error('Error connecting: ' + err.stack);
-    }
-    console.log('Connected as thread id: ' + connection.threadId);
-    });
 }
 
 exports.handler = function (event, context, callback) {
     context.callbackWaitsForEmptyEventLoop =false;
 
+    connection.connect(function(err) {
+      if (err) {
+        console.error('Error connecting: ' + err.stack);
+      }
+      console.log('Connected as thread id: ' + connection.threadId);
+    });
+
     var results=[];
     //SQL Query > Select Data
-    connection.query("SELECT * FROM `num_of_likes`", function(err, rows, fields) {
+
+    // return new Promise((resolve, reject) => {
+    //   const readTable = `SELECT * FROM num_of_likes`;
+    //   connection.query(readTable, (err, results, fields) => {
+    //     if (err) {
+    //      reject(err);
+    //     } else {
+    //       resolve({statusCode: 200, body: {results}});
+    //     }
+    //   });
+    // });
+
+    connection.query("SELECT * FROM num_of_likes", function(err, rows, fields) {
       if (err) {
         console.log(err);
       }
@@ -32,11 +44,11 @@ exports.handler = function (event, context, callback) {
         console.log(rows[r]);
         results.push(rows[r]);
       } 
-      return callback(null, {
+      callback(null, {
         statusCode: 200,
-        body: JSON.stringify(results)
+        body: JSON.parse(results),
       })
-    });
+    }); 
 }
 
 

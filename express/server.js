@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const cors = require('cors');
-
+const axios = require('axios');
 const router = express.Router();
 
 app.use(bodyParser.json());
@@ -54,6 +54,14 @@ app.get('/api/all_likes', function(req, res) {
     return res.json(rows);
   });
 });
+
+axios.get('/api/all_likes/')
+  .then(function (response) {
+    // handle success
+    console.log(response.data);
+  }).catch(error =>{
+    console.log(error);
+  });
 
 app.use(express.static('./public'))
 
