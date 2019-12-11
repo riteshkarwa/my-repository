@@ -55,13 +55,13 @@ app.get('/api/all_likes', function(req, res) {
   });
 });
 
-axios.get('/api/all_likes/')
-  .then(function (response) {
-    // handle success
-    console.log(response.data);
-  }).catch(error =>{
-    console.log(error);
-  });
+// axios.get('/api/all_likes/')
+//   .then(function (response) {
+//     // handle success
+//     console.log(response.data);
+//   }).catch(error =>{
+//     console.log(error);
+//   });
 
 app.use(express.static('./public'))
 

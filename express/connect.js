@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+const axios = require('axios');
 
 
 if (typeof connection === 'undefined'){
@@ -13,6 +14,19 @@ if (typeof connection === 'undefined'){
 }
 
 exports.handler = function (event, context, callback) {
+
+  // axios.get('/api/all_likes/', { proxy: { host: '127.0.0.1', port: 9000 } })
+  // .then(function (response) {
+  //   // handle success
+  //   console.log(response.data);
+  //   callback(null,{
+  //     statusCode: 200,
+  //     body: JSON.parse(response.data)
+  //   });
+  // }).catch(error =>{
+  //   console.log(error);
+  // });
+
     context.callbackWaitsForEmptyEventLoop =false;
 
     connection.connect(function(err) {
@@ -25,30 +39,30 @@ exports.handler = function (event, context, callback) {
     var results=[];
     //SQL Query > Select Data
 
-    // return new Promise((resolve, reject) => {
-    //   const readTable = `SELECT * FROM num_of_likes`;
-    //   connection.query(readTable, (err, results, fields) => {
-    //     if (err) {
-    //      reject(err);
-    //     } else {
-    //       resolve({statusCode: 200, body: {results}});
-    //     }
-    //   });
-    // });
+    return new Promise((resolve, reject) => {
+      const readTable = `SELECT * FROM num_of_likes`;
+      connection.query(readTable, (err, results, fields) => {
+        if (err) {
+         reject(err);
+        } else {
+          resolve({statusCode: 200, body: {results}});
+        }
+      });
+    });
 
-    connection.query("SELECT * FROM num_of_likes", function(err, rows, fields) {
-      if (err) {
-        console.log(err);
-      }
-      for (var r in rows){
-        console.log(rows[r]);
-        results.push(rows[r]);
-      } 
-      callback(null, {
-        statusCode: 200,
-        body: JSON.parse(results),
-      })
-    }); 
+    // connection.query("SELECT * FROM num_of_likes", function(err, rows, fields) {
+    //   if (err) {
+    //     console.log(err);
+    //   }
+    //   for (var r in rows){
+    //     console.log(rows[r]);
+    //     results.push(rows[r]);
+    //   } 
+    //   callback(null, {
+    //     statusCode: 200,
+    //     body: JSON.parse(results),
+    //   })
+    // }); 
 }
 
 
