@@ -143,7 +143,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             }
         ]
 
-        fetch('/.netlify/functions/connect')
+        fetch('api/all_likes/')
         .then(res=>{
             console.log(res);
         })
