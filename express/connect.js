@@ -23,7 +23,6 @@ exports.handler = function (event, context, callback) {
     
     context.callbackWaitsForEmptyEventLoop =false;
 
-
     var results=[];
     //SQL Query > Select Data
 
@@ -51,7 +50,6 @@ exports.handler = function (event, context, callback) {
         body: JSON.stringify(results)
       })
     }); 
-
     
 }
 
