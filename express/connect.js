@@ -8,7 +8,7 @@ if (typeof connection === 'undefined'){
       user: "sql3315408",
       database: "sql3315408",
       password: "zxLX9aF7ID",
-      port:"3306"
+      //port:"3306"
     });
 
   connection.connect(function(err) {
