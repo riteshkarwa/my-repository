@@ -54,16 +54,14 @@
 // }
 
 
-
-
 const mysql = require('mysql');
  
 exports.handler = (event, context, callback) => {
   const connection = mysql.createConnection({
       host : "sql3.freemysqlhosting.net",
-      user: "sql3315408",
-      database: "sql3315408",
-      password: "zxLX9aF7ID",
+      user: "sql3320285",
+      database: "sql3320285",
+      password: "EVjUz3x9fk",
   });
  
   connection.connect();
