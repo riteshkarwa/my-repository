@@ -180,16 +180,16 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             if (!image.been_liked) {
                     image.likes += 1;    
                     image.been_liked = true;
-                    // fetch(`/.netlify/functions/update_likes/${image.id}`, {
-                    //     body: JSON.stringify({"id":image.id,"num_of_likes":image.likes}),
-                    //     method: 'PUT'
-                    // }).then(response => {
-                    //     response.json().then(function(data) {
-                    //         console.log(data);
-                    //     })
-                    // }).catch((error) => {
-                    //     console.log("error", error)
-                    // })
+                    fetch(`/.netlify/functions/update_likes/${image.id}`, {
+                        body: JSON.stringify({num_of_likes:image.likes}),
+                        method: 'PUT'
+                    }).then(response => {
+                        response.json().then(function(data) {
+                            console.log(data);
+                        })
+                    }).catch((error) => {
+                        console.log("error", error)
+                    })
 
                     // $http.put('/.netlify/functions/update_likes/' + image.id, {"num_of_likes":image.likes})
                     // .success(function(data) {
@@ -197,17 +197,17 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                     //     console.log(data);
                     // })
 
-                    $http({
-                        method: 'PUT',
-                        url: "/.netlify/functions/update_likes/" + image.id,
-                        data: JSON.stringify({"num_of_likes":image.likes}),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    .error(function(data) {
-                        console.log('Error: ' + data);
-                    });
+                    // $http({
+                    //     method: 'PUT',
+                    //     url: "/.netlify/functions/update_likes/" + image.id,
+                    //     data: JSON.stringify({"num_of_likes":image.likes}),
+                    //     headers: {
+                    //         'Content-Type': 'application/json'
+                    //     }
+                    // })
+                    // .error(function(data) {
+                    //     console.log('Error: ' + data);
+                    // });
                 } 
             else {
                 image.likes -= 1;
