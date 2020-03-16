@@ -8,6 +8,7 @@ function getId(urlPath) {
     return urlPath.match(/([^\/]*)\/*$/)[0]
 }
 exports.handler = (event, context, callback) => {
+    var dataRef;
     const data = JSON.parse(event.body);
     console.log(data);
     const id = getId(event.path)
@@ -17,7 +18,7 @@ exports.handler = (event, context, callback) => {
       .then((ret) => {
         const searchRefs = response.data
         console.log("Likes refs", searchRefs)
-        const dataRef = likeRefs.map((ref) => {
+        dataRef = likeRefs.map((ref) => {
             return q.Get(ref)
         })
       })
