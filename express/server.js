@@ -6,7 +6,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const cors = require('cors');
-const axios = require('axios');
 const router = express.Router();
 var faunadb = require('faunadb'),
   q = faunadb.query;
