@@ -154,8 +154,8 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 } else if (!img.likes) {
                     img.likes = 0;
                 }
-            })
-        })
+            });
+        });
 
         // //Get all likes 
         // $http.get('/api/all_likes/')
@@ -176,33 +176,33 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         //     console.log('Error: ' + error);
         // });
 
-        $scope.favorite = function(image) {
-            //console.log(image.id);
-            if (!image.been_liked) {
-                    image.likes += 1;    
-                    image.been_liked = true;
-                    $http.put('/api/update_likes/' + image.id, {likes:image.likes})
-                        .success(function(data) {
-                        $scope.todoData = data;
-                        console.log(data);
-                    })
-                    .error(function(data) {
-                        console.log('Error: ' + data);
-                    });
-                } 
-            else {
-                image.likes -= 1;
-                $http.put('/api/update_likes/' + image.id, {likes:image.likes})
-                    .success(function(data) {
-                    $scope.todoData = data;
-                    //console.log(data);
-                })
-                .error(function(data) {
-                    console.log('Error: ' + data);
-                });
-                image.been_liked = false;
-            }
-        }  
+        // $scope.favorite = function(image) {
+        //     //console.log(image.id);
+        //     if (!image.been_liked) {
+        //             image.likes += 1;    
+        //             image.been_liked = true;
+        //             $http.put('/api/update_likes/' + image.id, {likes:image.likes})
+        //                 .success(function(data) {
+        //                 $scope.todoData = data;
+        //                 console.log(data);
+        //             })
+        //             .error(function(data) {
+        //                 console.log('Error: ' + data);
+        //             });
+        //         } 
+        //     else {
+        //         image.likes -= 1;
+        //         $http.put('/api/update_likes/' + image.id, {likes:image.likes})
+        //             .success(function(data) {
+        //             $scope.todoData = data;
+        //             //console.log(data);
+        //         })
+        //         .error(function(data) {
+        //             console.log('Error: ' + data);
+        //         });
+        //         image.been_liked = false;
+        //     }
+        // }  
     });
 
     scotchApp.controller('contactController', function($scope) {
