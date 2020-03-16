@@ -72,14 +72,12 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             {
                 id: 1,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885824/frenchstand_dtiyhu.jpg",
-                title: "French Provincial Night Stand",
-                likes: 100
+                title: "French Provincial Night Stand"
             },
             {
                 id: 2,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882123/stand_mkbg5e.jpg",
-                title: "Adorable Side Table",
-                likes: 230
+                title: "Adorable Side Table"
             },
             {
                 id: 3,
@@ -142,19 +140,15 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 likes: 290
             }
         ]
-
-        $http.get('/.netlify/functions/connect')
-        .then(res=>{
-            console.log(res);
-        })
         
         //Get all likes 
         $http.get('/api/all_likes/')
         .success(function(likes) {
+            //console.log(likes);
             $scope.images.forEach(function(img){
                 likes.forEach(function(like){
-                    if (img.id === like.id) {
-                        img.likes = like.likes;
+                    if (img.id == like.id) {
+                        img.likes = like.num_of_likes;
                     } else if (!img.likes) {
                         img.likes = 0;
                     }
@@ -167,7 +161,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         });
 
         $scope.favorite = function(image) {
-            console.log(image.id);
+            //console.log(image.id);
             if (!image.been_liked) {
                     image.likes += 1;    
                     image.been_liked = true;

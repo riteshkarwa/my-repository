@@ -27,7 +27,7 @@
     "bootstrap": "^3.4.0",
     "cors": "^2.8.4",
     "express": "^4.17.1",
-    "faunadb": "^2.10.0",
+    "faunadb": "^2.13.0",
     "mysql": "^2.15.0",
     "netlify-lambda": "^1.6.3",
     "nodemon": "^1.19.2",

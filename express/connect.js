@@ -57,11 +57,14 @@
 const mysql = require('mysql');
  
 exports.handler = (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop =false;
   const connection = mysql.createConnection({
       host : "sql3.freemysqlhosting.net",
-      user: "sql3320285",
-      database: "sql3320285",
-      password: "EVjUz3x9fk",
+      connectTimeout: 600000,
+      user: "ssruser",
+      database: "ssrdatabase",
+      password: "19august",
+      port:"3306"
   });
  
   connection.connect();
@@ -74,15 +77,6 @@ exports.handler = (event, context, callback) => {
     } else {
       console.log('success:');
       console.log(results);
-      connection.end((err) => {
-        if (err) {
-          console.log('fail:');
-          console.log(err);
-          callback(err, null);
-        } else {
-          callback(null, results);
-        }
-      });
     }
   });
 };
