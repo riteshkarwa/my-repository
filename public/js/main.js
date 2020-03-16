@@ -199,7 +199,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
 
                     $http({
                         method: 'PUT',
-                        url: ServerPath + "/" + $scope.id,
+                        url: "/.netlify/functions/update_likes/" + image.id,
                         data: JSON.stringify({num_of_likes:image.likes}),
                         headers: {
                             'Content-Type': 'application/json'
