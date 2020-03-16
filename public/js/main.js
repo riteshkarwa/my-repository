@@ -136,10 +136,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         //     console.log(res);
         // })
 
-        fetch('/.netlify/functions/all_likes', {
-            body: JSON.stringify(data),
-            method: 'POST'
-          }).then(response => {
+        fetch('/.netlify/functions/all_likes').then(response => {
             console.log(response.json());
           })
 
