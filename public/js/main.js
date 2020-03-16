@@ -184,7 +184,9 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                         body: JSON.stringify({"id":image.id,"num_of_likes":image.likes}),
                         method: 'POST'
                     }).then(response => {
-                        return response.json()
+                        response.json().then(function(data) {
+                            console.log(data);
+                        })
                     }).catch((error) => {
                         console.log("error", error)
                     })
