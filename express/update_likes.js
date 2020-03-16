@@ -11,8 +11,8 @@ function getId(urlPath) {
 exports.handler = (event, context, callback) => {
     const data = JSON.parse(event.body)
     const id = getId(event.path)
-    console.log("Function 'like-update' invoked. update id: ${id}")
-    return client.query(q.Update(q.Ref("num_of_likes/${id}"), {data}))
+    console.log(`Function 'like-update' invoked. update id: ${id}`)
+    return client.query(q.Update(q.Ref(`num_of_likes/${id}`), {data}))
     .then((response) => {
       console.log("success", response)
       return callback(null, {
