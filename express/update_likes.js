@@ -4,10 +4,13 @@ const client = new faunadb.Client({
   secret: 'fnADnAs2ygACCgKqaUyLxaAMPWfR8O8KWEy3DPmB'
 })
 
+function getId(urlPath) {
+    return urlPath.match(/([^\/]*)\/*$/)[0]
+}
 exports.handler = (event, context, callback) => {
     const data = JSON.parse(event.body);
     console.log(data);
-    const id = event.id
+    const id = getId(event.path)
     console.log(id);
     console.log(`Function 'like-update' invoked. update id: ${id}`)
     return client.query(q.Update(q.Ref(q.Collection("num_of_likes"),`${id}`), {data}))
