@@ -8,7 +8,6 @@ function getId(urlPath) {
     return urlPath.match(/([^\/]*)\/*$/)[0]
 }
 exports.handler = (event, context, callback) => {
-    var dataRef;
     const data = JSON.parse(event.body);
     console.log(data);
     const id = getId(event.path)
@@ -19,16 +18,16 @@ exports.handler = (event, context, callback) => {
         const searchRefs = response.data
         console.log("Likes refs", searchRefs)
         alert(searchRefs)
-        dataRef = searchRefs.map((ref) => {
+        const dataRef = searchRefs.map((ref) => {
             return q.Get(ref)
         })
-      })
-    return client.query(q.Update(q.Ref(q.Collection("num_of_likes"),`${dataRef}`), {data}))
-    .then((response) => {
-      console.log("success", response)
-      return callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(response)
+        return client.query(q.Update(q.Ref(q.Collection("num_of_likes"),`${dataRef}`), {data}))
+        .then((response) => {
+        console.log("success", response)
+        return callback(null, {
+            statusCode: 200,
+            body: JSON.stringify(response)
+        })
       })
     }).catch((error) => {
       console.log("error", error)
