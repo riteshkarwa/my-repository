@@ -13,7 +13,15 @@ exports.handler = (event, context, callback) => {
     const id = getId(event.path)
     console.log(id);
     console.log(`Function 'like-update' invoked. update id: ${id}`)
-    return client.query(q.Update(q.Ref(q.Collection("num_of_likes"),`${id}`), {data}))
+    client.query(q.Get(q.Match(q.Index('search_by_id'), `${id}`)))
+      .then((ret) => {
+        const searchRefs = response.data
+        console.log("Likes refs", searchRefs)
+        const dataRef = likeRefs.map((ref) => {
+            return q.Get(ref)
+        })
+      })
+    return client.query(q.Update(q.Ref(q.Collection("num_of_likes"),`${dataRef}`), {data}))
     .then((response) => {
       console.log("success", response)
       return callback(null, {
