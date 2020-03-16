@@ -140,12 +140,6 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         .then((resp) => resp.json())
         .then(function(data) {
             console.log(data);
-        })
-
-        //Get all likes 
-        $http.get('/api/all_likes/')
-        .success(function(likes) {
-            //console.log(likes);
             $scope.images.forEach(function(img){
                 likes.forEach(function(like){
                     if (img.id == like.id) {
@@ -155,11 +149,28 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                     }
                 })
             })
+        }).catch((error) => {
+            console.log("error", error)
+        })
 
-            //console.log($scope.images);
-        }).error(function(error) {
-            console.log('Error: ' + error);
-        });
+        // //Get all likes 
+        // $http.get('/api/all_likes/')
+        // .success(function(likes) {
+        //     //console.log(likes);
+        //     $scope.images.forEach(function(img){
+        //         likes.forEach(function(like){
+        //             if (img.id == like.id) {
+        //                 img.likes = like.num_of_likes;
+        //             } else if (!img.likes) {
+        //                 img.likes = 0;
+        //             }
+        //         })
+        //     })
+
+        //     //console.log($scope.images);
+        // }).error(function(error) {
+        //     console.log('Error: ' + error);
+        // });
 
         $scope.favorite = function(image) {
             //console.log(image.id);
