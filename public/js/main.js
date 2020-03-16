@@ -180,7 +180,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             if (!image.been_liked) {
                     image.likes += 1;    
                     image.been_liked = true;
-                    fetch("/.netlify/functions/todos-update/${image.id}", {
+                    fetch("/.netlify/functions/update_likes/${image.id}", {
                         body: JSON.stringify({"id":image.id,"num_of_likes":image.likes}),
                         method: 'POST'
                     }).then(response => {
