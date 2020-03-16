@@ -10,8 +10,8 @@ exports.handler = (event, context, callback) => {
   .then((response) => {
     const likeRefs = response.data
     console.log("Likes refs", likeRefs)
-    console.log(`${likeRefs.length} todos found`)
-    // create new query out of todo refs. http://bit.ly/2LG3MLg
+    console.log(`${likeRefs.length} likes found`)
+    
     const getAllTodoDataQuery = likeRefs.map((ref) => {
       return q.Get(ref)
     })
