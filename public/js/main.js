@@ -72,17 +72,20 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             {
                 id: 1,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885824/frenchstand_dtiyhu.jpg",
-                title: "French Provincial Night Stand"
+                title: "French Provincial Night Stand",
+                likes:""
             },
             {
                 id: 2,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882123/stand_mkbg5e.jpg",
-                title: "Adorable Side Table"
+                title: "Adorable Side Table",
+                likes:""
             },
             {
                 id: 3,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885212/midcentury_kxvnrs.jpg",
-                title: "Awesome Mid Century Table"
+                title: "Awesome Mid Century Table",
+                likes:""
             },
             {
                 id: 4,
@@ -143,7 +146,6 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 data.forEach(function(like){
                     if (img.id == like['data'].id) {
                         img.likes = like['data'].num_of_likes;
-                        console.log(img.likes);
                     } else if (!img.likes) {
                         img.likes = 0;
                     }
