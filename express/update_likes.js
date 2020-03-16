@@ -19,7 +19,7 @@ exports.handler = (event, context, callback) => {
         const searchRefs = response.data
         console.log("Likes refs", searchRefs)
         alert(searchRefs)
-        dataRef = likeRefs.map((ref) => {
+        dataRef = searchRefs.map((ref) => {
             return q.Get(ref)
         })
       })
