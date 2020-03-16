@@ -10,7 +10,9 @@ function getId(urlPath) {
 
 exports.handler = (event, context, callback) => {
     const data = JSON.parse(event.body)
+    console.log(data);
     const id = getId(event.path)
+    console.log(id);
     console.log(`Function 'like-update' invoked. update id: ${id}`)
     return client.query(q.Update(q.Ref(`num_of_likes/${id}`), {data}))
     .then((response) => {
