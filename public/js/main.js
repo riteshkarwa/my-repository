@@ -67,7 +67,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
     {
 
         $scope.counts = [];
-        $scope.results = []
+        $scope.results = [];
 
         $scope.images = [
             {
@@ -152,7 +152,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         }).catch((error) => {
             console.log("error", error)
         })
-
+        console.log($scope.results);
         $scope.images.forEach(function(img){
             $scope.results.forEach(function(like){
                 if (img.id == like.id) {
