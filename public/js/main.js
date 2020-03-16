@@ -137,72 +137,71 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         //     console.log(res);
         // })
 
-        fetch('/.netlify/functions/all_likes')
-        .then((resp) => resp.json())
-        .then(function(data) {
-            for (var r in data){
-                $scope.results.push(data[r]['data']);
-            }
-        }).catch((error) => {
-            console.log("error", error)
-        })
-        console.log($scope.results);
-        $scope.images.forEach(function(img){
-            $scope.results.forEach(function(like){
-                if (img.id == like.id) {
-                    img.likes = like.num_of_likes;
-                } else if (!img.likes) {
-                    img.likes = 0;
-                }
-            });
-        });
-
-        // //Get all likes 
-        // $http.get('/api/all_likes/')
-        // .success(function(likes) {
-        //     //console.log(likes);
-        //     $scope.images.forEach(function(img){
-        //         likes.forEach(function(like){
-        //             if (img.id == like.id) {
-        //                 img.likes = like.num_of_likes;
-        //             } else if (!img.likes) {
-        //                 img.likes = 0;
-        //             }
-        //         })
-        //     })
-
-        //     //console.log($scope.images);
-        // }).error(function(error) {
-        //     console.log('Error: ' + error);
+        // fetch('/.netlify/functions/all_likes')
+        // .then((resp) => resp.json())
+        // .then(function(data) {
+        //     for (var r in data){
+        //         $scope.results.push(data[r]['data']);
+        //     }
+        // }).catch((error) => {
+        //     console.log("error", error)
+        // })
+        // console.log($scope.results);
+        // $scope.images.forEach(function(img){
+        //     $scope.results.forEach(function(like){
+        //         if (img.id == like.id) {
+        //             img.likes = like.num_of_likes;
+        //         } else if (!img.likes) {
+        //             img.likes = 0;
+        //         }
+        //     });
         // });
 
-        // $scope.favorite = function(image) {
-        //     //console.log(image.id);
-        //     if (!image.been_liked) {
-        //             image.likes += 1;    
-        //             image.been_liked = true;
-        //             $http.put('/api/update_likes/' + image.id, {likes:image.likes})
-        //                 .success(function(data) {
-        //                 $scope.todoData = data;
-        //                 console.log(data);
-        //             })
-        //             .error(function(data) {
-        //                 console.log('Error: ' + data);
-        //             });
-        //         } 
-        //     else {
-        //         image.likes -= 1;
-        //         $http.put('/api/update_likes/' + image.id, {likes:image.likes})
-        //             .success(function(data) {
-        //             $scope.todoData = data;
-        //             //console.log(data);
-        //         })
-        //         .error(function(data) {
-        //             console.log('Error: ' + data);
-        //         });
-        //         image.been_liked = false;
-        //     }
-        // }  
+        // //Get all likes 
+        $http.get('/.netlify/functions/all_likes')
+        .success(function(likes) {
+            //console.log(likes);
+            $scope.images.forEach(function(img){
+                likes.forEach(function(like){
+                    if (img.id == like['data'].id) {
+                        img.likes = like['data'].num_of_likes;
+                    } else if (!img.likes) {
+                        img.likes = 0;
+                    }
+                })
+            })
+
+        }).error(function(error) {
+            console.log('Error: ' + error);
+        });
+
+        $scope.favorite = function(image) {
+            //console.log(image.id);
+            if (!image.been_liked) {
+                    image.likes += 1;    
+                    image.been_liked = true;
+                    $http.put('/api/update_likes/' + image.id, {likes:image.likes})
+                        .success(function(data) {
+                        $scope.todoData = data;
+                        console.log(data);
+                    })
+                    .error(function(data) {
+                        console.log('Error: ' + data);
+                    });
+                } 
+            else {
+                image.likes -= 1;
+                $http.put('/api/update_likes/' + image.id, {likes:image.likes})
+                    .success(function(data) {
+                    $scope.todoData = data;
+                    //console.log(data);
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });
+                image.been_liked = false;
+            }
+        }  
     });
 
     scotchApp.controller('contactController', function($scope) {
