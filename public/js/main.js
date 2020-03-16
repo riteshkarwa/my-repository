@@ -180,7 +180,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             if (!image.been_liked) {
                     image.likes += 1;    
                     image.been_liked = true;
-                    $http.put('/.netlify/functions/todos-update/' + image.id, {num_of_likes:image.likes})
+                    $http.put('/.netlify/functions/update_likes/' + image.id, {num_of_likes:image.likes})
                         .success(function(data) {
                         $scope.todoData = data;
                         console.log(data);
@@ -191,7 +191,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 } 
             else {
                 image.likes -= 1;
-                $http.put('/.netlify/functions/todos-update/' + image.id, {num_of_likes:image.likes})
+                $http.put('/.netlify/functions/update_likes/' + image.id, {num_of_likes:image.likes})
                     .success(function(data) {
                     $scope.todoData = data;
                     //console.log(data);
