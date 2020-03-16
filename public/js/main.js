@@ -67,6 +67,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
     {
 
         $scope.counts = [];
+        $scope.results = []
 
         $scope.images = [
             {
@@ -145,17 +146,21 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         fetch('/.netlify/functions/all_likes')
         .then((resp) => resp.json())
         .then(function(data) {
-            $scope.images.forEach(function(img){
-                data.forEach(function(like){
-                    if (img.id == like['data'].id) {
-                        img.likes = like['data'].num_of_likes;
-                    } else if (!img.likes) {
-                        img.likes = 0;
-                    }
-                })
-            })
+            for (var r in data){
+                $scope.results.push(data[r]['data']);
+            }
         }).catch((error) => {
             console.log("error", error)
+        })
+
+        $scope.images.forEach(function(img){
+            $scope.results.forEach(function(like){
+                if (img.id == like.id) {
+                    img.likes = like.num_of_likes;
+                } else if (!img.likes) {
+                    img.likes = 0;
+                }
+            })
         })
 
         // //Get all likes 
