@@ -143,6 +143,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 data.forEach(function(like){
                     console.log(like['data'].id);
                     console.log(like['data'].num_of_likes);
+                    console.log(img.id);
                     if (img.id == like['data'].id) {
                         img.likes = like['data'].num_of_likes;
                     } else if (!img.likes) {
