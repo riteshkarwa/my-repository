@@ -139,9 +139,8 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
         fetch('/.netlify/functions/all_likes')
         .then((resp) => resp.json())
         .then(function(data) {
-            console.log(data);
             $scope.images.forEach(function(img){
-                likes.forEach(function(like){
+                data['data'].forEach(function(like){
                     if (img.id == like.id) {
                         img.likes = like.num_of_likes;
                     } else if (!img.likes) {
