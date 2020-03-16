@@ -131,10 +131,17 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             }
         ]
         
-        $http.get('/.netlify/functions/server.js')
-        .then(res=>{
-            console.log(res);
-        })
+        // $http.get('/.netlify/functions/server.js')
+        // .then(res=>{
+        //     console.log(res);
+        // })
+
+        fetch('/.netlify/functions/all_likes', {
+            body: JSON.stringify(data),
+            method: 'POST'
+          }).then(response => {
+            console.log(response.json());
+          })
 
         //Get all likes 
         $http.get('/api/all_likes/')
