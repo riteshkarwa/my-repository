@@ -73,34 +73,37 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 id: 1,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885824/frenchstand_dtiyhu.jpg",
                 title: "French Provincial Night Stand",
-                likes:""
+                likes:260
             },
             {
                 id: 2,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882123/stand_mkbg5e.jpg",
                 title: "Adorable Side Table",
-                likes:""
+                likes:320
             },
             {
                 id: 3,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885212/midcentury_kxvnrs.jpg",
                 title: "Awesome Mid Century Table",
-                likes:""
+                likes:440
             },
             {
                 id: 4,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1474155614/2tier_oldgo9.jpg",
-                title: "French Provincial End Table"
+                title: "French Provincial End Table",
+                likes:284
             },
             {
                 id: 5,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463882106/doggy_bed_u3jign.jpg",
-                title: "Doggy Bed"
+                title: "Doggy Bed",
+                likes:154
             },
             {
                 id: 6,
                 url: "https://res.cloudinary.com/dkjcddqy0/image/upload/v1463881943/breadbox_gxioq9.jpg",
-                title: "Bread Box"
+                title: "Bread Box",
+                likes:0
             },
             {   
                 id:7,
