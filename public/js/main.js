@@ -131,7 +131,7 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
             }
         ]
         
-        $http.get('/.netlify/functions/server')
+        $http.get('/.netlify/functions/server.js')
         .then(res=>{
             console.log(res);
         })
