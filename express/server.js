@@ -39,7 +39,6 @@ app.post('/send', function(req, res){
       res.json({message: 'Email sent!!'});
     }
   });
-  console.log(mailOptions);
 })
 
 // // for local testing
@@ -89,21 +88,21 @@ app.post('/send', function(req, res){
 //STMP is mail server which is responsible for sending and recieving email.
 
 
-var smtpTransport = nodemailer.createTransport("SMTP",{
-  service: 'Gmail',
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD
-  }
-});
+// var smtpTransport = nodemailer.createTransport("SMTP",{
+//   service: 'Gmail',
+//   auth: {
+//     user: process.env.EMAIL,
+//     pass: process.env.PASSWORD
+//   }
+// });
 
-smtpTransport.sendMail(mailOptions, function(error, response){
-  if(error){
-    console.log(error);
-  }else{
-    console.log("Message sent: " + response.message);
-  }
-});
+// smtpTransport.sendMail(mailOptions, function(error, response){
+//   if(error){
+//     console.log(error);
+//   }else{
+//     console.log("Message sent: " + response.message);
+//   }
+// });
 
 //Query Database to get all likes
 app.get('/api/all_likes', function(req, res) {

@@ -1,7 +1,7 @@
 const faunadb = require('faunadb')
 const q = faunadb.query
 const client = new faunadb.Client({
-  secret: 'fnADnAs2ygACCgKqaUyLxaAMPWfR8O8KWEy3DPmB'
+  secret: process.env.FAUNADB_KEY
 })
 
 function getId(urlPath) {
