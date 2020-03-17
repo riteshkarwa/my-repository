@@ -30,12 +30,15 @@ app.use(express.json());
 
 app.post('/send', function(req, res){
   console.log("in mail controller");
-  var mailOptions={
-    from : req.body.name + " " + req.body.email + " ",
-    to : process.env.EMAIL,
-    subject : req.body.subject,
-    text : req.body.text
-  }
+  console.log("Data", req.body);
+  const {name, email, subject, text} = req.body
+  sendMail(name, email, subject, text, function(err, data){
+    if(err){
+      res.status(500).json({message: 'there was an error'});
+    }else{
+      res.json({message: 'Email sent!!'});
+    }
+  });
   console.log(mailOptions);
 })
 
