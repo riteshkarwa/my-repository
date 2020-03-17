@@ -70,6 +70,7 @@ var client = new faunadb.Client({ secret: 'fnADnAs2ygACCgKqaUyLxaAMPWfR8O8KWEy3D
 //Here we are configuring our SMTP Server details.
 //STMP is mail server which is responsible for sending and recieving email.
 
+console.log(process.env.EMAIL);
 var smtpTransport = nodemailer.createTransport("SMTP",{
   service: 'Gmail',
   auth: {

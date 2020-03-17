@@ -3,7 +3,7 @@ const q = faunadb.query
 const client = new faunadb.Client({
   secret: 'fnADnAs2ygACCgKqaUyLxaAMPWfR8O8KWEy3DPmB'
 })
-
+console.log(process.env.FAUNADB_KEY);
 exports.handler = (event, context, callback) => {
   console.log("Function `num_of_likes-read-all` invoked")
   return client.query(q.Paginate(q.Match(q.Ref("indexes/all_num_of_likes"))))
