@@ -8,8 +8,8 @@ function getId(urlPath) {
     return urlPath.match(/([^\/]*)\/*$/)[0]
 }
 exports.handler = (event, context, callback) => {
-    //const data = JSON.parse(event.body);
-    //console.log(event.body);
+    const data = JSON.parse(event.body);
+    console.log(event.body);
     const id = getId(event.path)
     console.log(id);
     console.log(`Function 'like-update' invoked. update id: ${id}`)
