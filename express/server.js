@@ -1,6 +1,7 @@
-
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const nodemailer = require('nodemailer');
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
@@ -21,7 +22,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var client = new faunadb.Client({ secret: 'fnADnAs2ygACCgKqaUyLxaAMPWfR8O8KWEy3DPmB' });
+var client = new faunadb.Client({ secret: process.env.FAUNADB_KEY });
 
 // // for local testing
 // var connection = mysql.createConnection({
@@ -66,6 +67,24 @@ var client = new faunadb.Client({ secret: 'fnADnAs2ygACCgKqaUyLxaAMPWfR8O8KWEy3D
 //     console.log(error);
 //   });
 
+//Here we are configuring our SMTP Server details.
+//STMP is mail server which is responsible for sending and recieving email.
+
+var smtpTransport = nodemailer.createTransport("SMTP",{
+  service: 'Gmail',
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD
+  }
+});
+
+smtpTransport.sendMail(mailOptions, function(error, response){
+  if(error){
+    console.log(error);
+  }else{
+    console.log("Message sent: " + response.message);
+  }
+});
 
 //Query Database to get all likes
 app.get('/api/all_likes', function(req, res) {

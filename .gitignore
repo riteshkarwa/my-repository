@@ -1,2 +1,6 @@
 # Local Netlify folder
-.netlify
+/.netlify
+# Node Modules
+/node_modules
+# ignore .env file 
+.env
