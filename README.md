@@ -1,1 +1,1 @@
-# Making Southern Sunshine and Roses website deployable to netlify
+# Code base for Southern Sunshine and Roses website chelsea felter and ritesh karwa
