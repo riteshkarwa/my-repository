@@ -8,14 +8,14 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
   <url>
-    <loc>http://www.southernsunshineandroses.com/</loc>
+    <loc>https://southernsunshineandroses.netlify.com/</loc>
     <image:image>
       <image:loc>https://res.cloudinary.com/dkjcddqy0/image/upload/v1510632650/23600973_10211213494155050_426846348_o_ayaa32.jpg</image:loc>
       <image:caption>Southern Sunshine and Roses</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>http://www.southernsunshineandroses.com/gallery</loc>
+    <loc>https://southernsunshineandroses.netlify.com/gallery</loc>
     <image:image>
       <image:loc>https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885824/frenchstand_dtiyhu.jpg</image:loc>
       <image:caption>French Provincial Night Stand</image:caption>
@@ -66,7 +66,7 @@
     </image:image>
   </url>
   <url>
-    <loc>http://www.southernsunshineandroses.com/about</loc>
+    <loc>https://southernsunshineandroses.netlify.com/about</loc>
     <image:image>
       <image:loc>https://res.cloudinary.com/dkjcddqy0/image/upload/v1465082221/photo_y3c3bb.jpg</image:loc>
       <image:caption>Owner of Chelsea Felter</image:caption>
@@ -74,12 +74,12 @@
     </image:image>  
   </url>
   <url>
-    <loc>http://www.southernsunshineandroses.com/contact</loc>
+    <loc>https://southernsunshineandroses.netlify.com/contact</loc>
   </url>
   <url>
-    <loc>http://www.southernsunshineandroses.com/terms</loc>
+    <loc>https://southernsunshineandroses.netlify.com/terms</loc>
   </url>
   <url>
-    <loc>http://www.southernsunshineandroses.com/blog</loc>
+    <loc>https://southernsunshineandroses.netlify.com/blog</loc>
   </url>
 </urlset>
