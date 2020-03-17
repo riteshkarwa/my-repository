@@ -193,14 +193,16 @@ var scotchApp = angular.module('myApp', ['ngRoute','ui.bootstrap']);
                 } 
             else {
                 image.likes -= 1;
-                $http.put('/.netlify/functions/update_likes/' + image.id, {"id":image.id,"num_of_likes":image.likes})
-                .success(function(data) {
-                    $scope.todoData = data;
-                    //console.log(data);
+                fetch(`/.netlify/functions/update_likes/${image.id}`, {
+                    body: JSON.stringify({num_of_likes:image.likes}),
+                    method: 'PUT'
+                }).then(response => {
+                    response.json().then(function(data) {
+                        console.log(data);
+                    })
+                }).catch((error) => {
+                    console.log("error", error)
                 })
-                .error(function(data) {
-                    console.log('Error: ' + data);
-                });
                 image.been_liked = false;
             }
         }  
