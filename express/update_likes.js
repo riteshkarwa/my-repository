@@ -19,7 +19,7 @@ exports.handler = (event, context, callback) => {
         
         const datastr= JSON.stringify(searchRefs);
         const dataRef = JSON.parse(datastr)[0]['@ref']['id'];
-        return client.query(q.Update(q.Ref(q.Collection("num_of_likes"),Number(dataRef)), {data}))
+        return client.query(q.Update(q.Ref(q.Collection("num_of_likes"), dataRef), {data}))
         .then((response) => {
             console.log("success", response)
             return callback(null, {
