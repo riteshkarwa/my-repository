@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var client = new faunadb.Client({ secret: process.env.FAUNADB_KEY });
+var client = new faunadb.Client({ secret: 'fnADnAs2ygACCgKqaUyLxaAMPWfR8O8KWEy3DPmB' });
 
 // // for local testing
 // var connection = mysql.createConnection({
@@ -73,8 +73,8 @@ var client = new faunadb.Client({ secret: process.env.FAUNADB_KEY });
 var smtpTransport = nodemailer.createTransport("SMTP",{
   service: 'Gmail',
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD
+    user: "southernsunshineandroses15@gmail.com",
+    pass: "Haloka!8992"
   }
 });
 
