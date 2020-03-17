@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const sendMail = require('./mail')
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
