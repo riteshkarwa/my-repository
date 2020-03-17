@@ -1,10 +1,9 @@
 const express = require('express');
 const path = require('path');
-const nodemailer = require('nodemailer');
+const sendMail = require('./mail')
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
-const mysql = require('mysql');
 const cors = require('cors');
 const router = express.Router();
 var faunadb = require('faunadb'),
@@ -21,7 +20,24 @@ app.use(function(req, res, next) {
   next();
 });
 
-var client = new faunadb.Client({ secret: 'fnADnAs2ygACCgKqaUyLxaAMPWfR8O8KWEy3DPmB' });
+var client = new faunadb.Client({ secret: process.env.FAUNADB_KEY });
+
+// Data parsing
+app.use(express.urlencoded({
+  extended: false
+}));
+app.use(express.json());
+
+app.post('/send', function(req, res){
+  console.log("in mail controller");
+  var mailOptions={
+    from : req.body.name + " " + req.body.email + " ",
+    to : process.env.EMAIL,
+    subject : req.body.subject,
+    text : req.body.text
+  }
+  console.log(mailOptions);
+})
 
 // // for local testing
 // var connection = mysql.createConnection({
@@ -69,12 +85,12 @@ var client = new faunadb.Client({ secret: 'fnADnAs2ygACCgKqaUyLxaAMPWfR8O8KWEy3D
 //Here we are configuring our SMTP Server details.
 //STMP is mail server which is responsible for sending and recieving email.
 
-console.log(process.env.EMAIL);
+
 var smtpTransport = nodemailer.createTransport("SMTP",{
   service: 'Gmail',
   auth: {
-    user: "southernsunshineandroses15@gmail.com",
-    pass: "Haloka!8992"
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD
   }
 });
 
