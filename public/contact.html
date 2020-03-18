@@ -52,8 +52,8 @@ $(document).ready(function(){
       	email = $('#email').val();
 	  	text = $('#message').val();
 	  
-		const data = new FormData(form)
-		data.append('form-name', 'contactus');
+		// const data = new FormData(form)
+		// data.append('form-name', 'contactus');
 		fetch('/', {
 			method: 'POST',
 			body: JSON.stringify({name:name,email:email,subject:subject, text:text})
