@@ -47,14 +47,14 @@ $(document).ready(function(){
     var name,email,subject,text;
     $("#submit").click(function(){
 		name= $('#name').val();
+		console.log(name);
       	subject= $('#subject').val();
       	email = $('#email').val();
       	text = $('#message').val();
-	  	fetch(`/.netlify/functions/update_likes/${image.id}`, {
+	  	fetch('/send', {
 			  body: JSON.stringify({name:name,email:email,subject:subject, text:text}),
 			  method: 'POST'
         }).then(response => {
-
 			response.json().then(function(data) {
 				console.log(data);
 				$("#send_message").text("Message has been sent. Thank you for the feedback");
