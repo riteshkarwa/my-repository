@@ -13,7 +13,4 @@
 # Redirect with a 200
 /terms / 200
 
-# Redirect with a 200
-/send /.netlify/functions/mail
-
 /* / 200

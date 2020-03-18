@@ -1,10 +1,7 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-const express = require('express')
-const app = express()
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+
 
 app.post('/send', function (req, res) {
     //const data = JSON.parse(event.body);
