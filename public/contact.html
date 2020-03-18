@@ -45,19 +45,21 @@
 
 $(document).ready(function(){
     var name,email,subject,text;
-    $("#submit").click(function(){
-      name= $('#name').val();
-      subject= $('#subject').val();
-      email = $('#email').val();
-      text = $('#message').val();
-      $.post("/.netlify/functions/mail", {name:name,email:email,subject:subject, text:text}, function(data){   
-        if(data=="sent")
-        {
-          $("#send_message").text("Message has been sent. Thank you for the feedback");
-          $("#contactus").trigger('reset');
-          $("#send_message").fadeOut(6000);
-        }
-      });
+    $("#submit").click(function(e){
+		var $form = $(this);
+		console.log($form);
+		e.preventDefault();
+      	name= $('#name').val();
+      	subject= $('#subject').val();
+      	email = $('#email').val();
+      	text = $('#message').val();
+      	//$.post("/.netlify/functions/mail", {name:name,email:email,subject:subject, text:text}, function(data){   
+			//if(data=="sent")
+		$.post(	$form.attr("action"), $form.serialize()).then(function() {
+			$("#send_message").text("Message has been sent. Thank you for the feedback");
+			$("#contactus").trigger('reset');
+			$("#send_message").fadeOut(6000);
+      	});
     });
   });
 	
