@@ -80,7 +80,7 @@ app.post('/send', function(req, res){
   console.log("in mail controller");
   var mailOptions={
     from : req.body.name + " " + req.body.email + " ",
-    to : "ssrfelter@gmail.com",
+    to : process.env.EMAIL,
     subject : req.body.subject,
     text : req.body.text
   }
