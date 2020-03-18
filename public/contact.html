@@ -1,8 +1,14 @@
 <div class="container">
 	    <h1> I'd love to hear from you </h1>
 	<hr/>
-	<form name="contactus" id="contactus" data-netlify="true">
-	    <div class="row">
+	<form name="contactus" id="contactus" data-netlify="true" netlify-honeypot="bot-field">
+		<div hidden aria-hidden="true">
+			<label>
+			  	Don’t fill this out if you're human: 
+			  	<input name="bot-field" />
+			</label>
+		</div>
+		<div class="row">
 	        <div class="col-md-6">
 	            <p>
 	              	<label for="name">Name:</label><br/>
