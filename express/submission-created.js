@@ -3,7 +3,6 @@ require('dotenv').config();
 
 exports.handler = (event, context, callback) => {
     const data = JSON.parse(event.body)
-    //const data = JSON.parse(event.body);
     console.log(data);
 
     // Here we are configuring our SMTP Server details.
