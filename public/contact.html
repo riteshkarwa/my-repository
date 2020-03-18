@@ -1,7 +1,7 @@
 <div class="container">
 	    <h1> I'd love to hear from you </h1>
 	<hr/>
-	<form name="contactus" id="contactus" data-netlify="true" netlify-honeypot="bot-field">
+	<form name="contactus" id="contactus" method="POST" data-netlify="true" netlify-honeypot="bot-field">
 		<div hidden aria-hidden="true">
 			<label>
 			  	Don’t fill this out if you're human: 
@@ -20,7 +20,7 @@
           	<div class="col-md-6">
             	<p>
               		<label for="email">Email:</label><br/>
-              		<input  name="email" type="text" value="" id="email"  placeholder="Enter E-mail address" class="form-control"/>
+              		<input  name="email" type="email" value="" id="email"  placeholder="Enter E-mail address" class="form-control"/>
             	</p>
           	</div>
         </div>
