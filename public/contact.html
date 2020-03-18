@@ -46,18 +46,24 @@
 $(document).ready(function(){
     var name,email,subject,text;
     $("#submit").click(function(){
-      name= $('#name').val();
-      subject= $('#subject').val();
-      email = $('#email').val();
-      text = $('#message').val();
-      $.post("/send", {name:name,email:email,subject:subject, text:text}, function(data){   
-        if(data=="sent")
-        {
-          $("#send_message").text("Message has been sent. Thank you for the feedback");
-          $("#contactus").trigger('reset');
-          $("#send_message").fadeOut(6000);
-        }
-      });
+		name= $('#name').val();
+      	subject= $('#subject').val();
+      	email = $('#email').val();
+      	text = $('#message').val();
+	  	fetch(`/.netlify/functions/update_likes/${image.id}`, {
+			  body: JSON.stringify({name:name,email:email,subject:subject, text:text}),
+			  method: 'POST'
+        }).then(response => {
+
+			response.json().then(function(data) {
+				console.log(data);
+				$("#send_message").text("Message has been sent. Thank you for the feedback");
+				$("#contactus").trigger('reset');
+				$("#send_message").fadeOut(6000);
+			})
+		}).catch((error) => {
+			console.log("error", error)
+		})	  
     });
   });
 	
