@@ -13,6 +13,7 @@
 # Redirect with a 200
 /terms / 200
 
-/send https://southernsunshineandroses.netlify.com/contact 200
+# Redirect with a 200
+/send / 200
 
 /* / 200
