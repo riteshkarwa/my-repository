@@ -1,43 +1,43 @@
 const nodemailer = require('nodemailer');
+require('dotenv').config();
+const express = require('express')
+const app = express()
 
-exports.handler = (event, context, callback) => {
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+app.post('/send', function (req, res) {
     //const data = JSON.parse(event.body);
     console.log(event.body.name);
 
     // Here we are configuring our SMTP Server details.
     // STMP is mail server which is responsible for sending and recieving email.
 
-    var smtpTransport = nodemailer.createTransport("SMTP",{
-        service: 'Gmail',
+    var smtpTransport = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
           user: process.env.EMAIL,
           pass: process.env.PASSWORD
         }
     });
 
-    console.log("in mail controller");
-    var mailOptions={
-        from : event.body.name + " " + event.body.email + " ",
-        to : process.env.EMAIL,
-        subject : event.body.subject,
-        text : event.body.text
+
+    let mailOptions={
+        from: req.body.name,
+        to: process.env.EMAIL,
+        subject: req.body.subject,
+        text: req.body.text
     }
     console.log(mailOptions);
 
     smtpTransport.sendMail(mailOptions, function(error, response){
         if(error){
           console.log(error);
-          return callback(null, {
-            statusCode: 400,
-            body: JSON.stringify(error)
-          })
         }else{
-          console.log("Message sent: " + response.message);
-          return callback(null, {
-            statusCode: 200,
-            body: response.message
-          })
+            console.log('Message %s sent: %s', info.messageId, info.response);
         }
     });
 
-}
+})
