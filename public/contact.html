@@ -1,7 +1,7 @@
-<!--<div class="container">
+<div class="container">
 	    <h1> I'd love to hear from you </h1>
-	<hr/>-->
-	<form name="contactus" id="contactus" method="POST" data-netlify="true">
+	<hr/>
+	<form action="/send" name="contactus" id="contactus" method="post">
 	    <div class="row">
 	        <div class="col-md-6">
 	            <p>
@@ -37,30 +37,28 @@
         <p>
           	<button class="btn btn-primary btn-md" name="submit" type="button" value="Send" id="submit">Send</button>
         </p>
-        <!-- <div id="send_message"></div>-->
+        <div id="send_message"></div>
 	</form>
-<!-- </div>-->
+</div>
 
 <script type="text/javascript">
 
-// $(document).ready(function(){
-//     var name,email,subject,text;
-//     $("#contactus").submit(function(e){
-// 		var $form = $(this);
-// 		console.log($form);
-// 		e.preventDefault();
-//       	name= $('#name').val();
-//       	subject= $('#subject').val();
-//       	email = $('#email').val();
-//       	text = $('#message').val();
-//       	//$.post("/.netlify/functions/mail", {name:name,email:email,subject:subject, text:text}, function(data){   
-// 			//if(data=="sent")
-// 		$.post($form.attr("action"), $form.serialize()).then(function() {
-// 			$("#send_message").text("Message has been sent. Thank you for the feedback");
-// 			$("#contactus").trigger('reset');
-// 			$("#send_message").fadeOut(6000);
-//       	});
-//     });
-//   });
+$(document).ready(function(){
+    var name,email,subject,text;
+    $("#submit").click(function(){
+      name= $('#name').val();
+      subject= $('#subject').val();
+      email = $('#email').val();
+      text = $('#message').val();
+      $.post("/send", {name:name,email:email,subject:subject, text:text}, function(data){   
+        if(data=="sent")
+        {
+          $("#send_message").text("Message has been sent. Thank you for the feedback");
+          $("#contactus").trigger('reset');
+          $("#send_message").fadeOut(6000);
+        }
+      });
+    });
+  });
 	
 </script>
