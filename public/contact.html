@@ -47,12 +47,11 @@ $(document).ready(function(){
     var name,email,subject,text;
     $("#submit").click(function(){
 		name= $('#name').val();
-		console.log(name);
       	subject= $('#subject').val();
       	email = $('#email').val();
       	text = $('#message').val();
 	  	fetch('/send', {
-			  body: JSON.stringify({name:name,email:email,subject:subject, text:text}),
+			  body: {"name":name,"email":email,"subject":subject, "text":text},
 			  method: 'POST'
         }).then(response => {
 			response.json().then(function(data) {
