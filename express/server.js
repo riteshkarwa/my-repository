@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const nodemailer = require('nodemailer')
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
@@ -26,19 +27,6 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(express.json());
-
-app.post('/send', function(req, res){
-  console.log("in mail controller");
-  console.log("Data", req.body);
-  const {name, email, subject, text} = req.body
-  sendMail(name, email, subject, text, function(err, data){
-    if(err){
-      res.status(500).json({message: 'there was an error'});
-    }else{
-      res.json({message: 'Email sent!!'});
-    }
-  });
-})
 
 // // for local testing
 // var connection = mysql.createConnection({
@@ -75,33 +63,37 @@ app.post('/send', function(req, res){
 //   // });
 // });
 
-// axios.get('/api/all_likes/')
-//   .then(function (response) {
-//     // handle success
-//     console.log(response.data);
-//   }).catch(error =>{
-//     console.log(error);
-//   });
 
-//Here we are configuring our SMTP Server details.
-//STMP is mail server which is responsible for sending and recieving email.
+// Here we are configuring our SMTP Server details.
+// STMP is mail server which is responsible for sending and recieving email.
 
 
-// var smtpTransport = nodemailer.createTransport("SMTP",{
-//   service: 'Gmail',
-//   auth: {
-//     user: process.env.EMAIL,
-//     pass: process.env.PASSWORD
-//   }
-// });
+var smtpTransport = nodemailer.createTransport("SMTP",{
+  service: 'Gmail',
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD
+  }
+});
 
-// smtpTransport.sendMail(mailOptions, function(error, response){
-//   if(error){
-//     console.log(error);
-//   }else{
-//     console.log("Message sent: " + response.message);
-//   }
-// });
+app.post('/send', function(req, res){
+  console.log("in mail controller");
+  var mailOptions={
+    from : req.body.name + " " + req.body.email + " ",
+    to : "ssrfelter@gmail.com",
+    subject : req.body.subject,
+    text : req.body.text
+  }
+  console.log(mailOptions);
+});
+
+smtpTransport.sendMail(mailOptions, function(error, response){
+  if(error){
+    console.log(error);
+  }else{
+    console.log("Message sent: " + response.message);
+  }
+});
 
 //Query Database to get all likes
 app.get('/api/all_likes', function(req, res) {
