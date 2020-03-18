@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const nodemailer = require('nodemailer')
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
@@ -22,11 +21,7 @@ app.use(function(req, res, next) {
 
 var client = new faunadb.Client({ secret: process.env.FAUNADB_KEY });
 
-// Data parsing
-app.use(express.urlencoded({
-  extended: false
-}));
-app.use(express.json());
+
 
 // // for local testing
 // var connection = mysql.createConnection({
@@ -63,37 +58,6 @@ app.use(express.json());
 //   // });
 // });
 
-
-// Here we are configuring our SMTP Server details.
-// STMP is mail server which is responsible for sending and recieving email.
-
-
-var smtpTransport = nodemailer.createTransport("SMTP",{
-  service: 'Gmail',
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD
-  }
-});
-
-app.post('/send', function(req, res){
-  console.log("in mail controller");
-  var mailOptions={
-    from : req.body.name + " " + req.body.email + " ",
-    to : process.env.EMAIL,
-    subject : req.body.subject,
-    text : req.body.text
-  }
-  console.log(mailOptions);
-});
-
-smtpTransport.sendMail(mailOptions, function(error, response){
-  if(error){
-    console.log(error);
-  }else{
-    console.log("Message sent: " + response.message);
-  }
-});
 
 //Query Database to get all likes
 app.get('/api/all_likes', function(req, res) {
