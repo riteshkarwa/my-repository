@@ -2,6 +2,9 @@
 /blog / 200
 
 # Redirect with a 200
+/contact / 200
+
+# Redirect with a 200
 /about / 200
 
 # Redirect with a 200
