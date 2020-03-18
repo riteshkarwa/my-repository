@@ -1,11 +1,10 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-
-
-app.post('/send', function (req, res) {
+exports.handler = (event, context, callback) => {
+    const data = JSON.parse(event.body)
     //const data = JSON.parse(event.body);
-    console.log(event.body.name);
+    console.log(data);
 
     // Here we are configuring our SMTP Server details.
     // STMP is mail server which is responsible for sending and recieving email.
@@ -37,4 +36,4 @@ app.post('/send', function (req, res) {
         }
     });
 
-})
+}
