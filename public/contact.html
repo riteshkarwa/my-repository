@@ -45,7 +45,7 @@
 
 $(document).ready(function(){
     var name,email,subject,text;
-    $("#submit").click(function(e){
+    $("#contactus").submit(function(e){
 		var $form = $(this);
 		console.log($form);
 		e.preventDefault();
@@ -55,7 +55,7 @@ $(document).ready(function(){
       	text = $('#message').val();
       	//$.post("/.netlify/functions/mail", {name:name,email:email,subject:subject, text:text}, function(data){   
 			//if(data=="sent")
-		$.post(	$form.attr("action"), $form.serialize()).then(function() {
+		$.post($form.attr("action"), $form.serialize()).then(function() {
 			$("#send_message").text("Message has been sent. Thank you for the feedback");
 			$("#contactus").trigger('reset');
 			$("#send_message").fadeOut(6000);
