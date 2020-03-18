@@ -20,10 +20,10 @@ exports.handler = (event, context, callback) => {
 
 
     let mailOptions={
-        from: req.body.name,
+        from: data.email,
         to: process.env.EMAIL,
-        subject: req.body.subject,
-        text: req.body.text
+        subject: data.subject,
+        text: `This message is from:${data.name} Message:${data.text}`
     }
     console.log(mailOptions);
 
@@ -31,8 +31,7 @@ exports.handler = (event, context, callback) => {
         if(error){
           console.log(error);
         }else{
-            console.log('Message %s sent: %s', info.messageId, info.response);
+            console.log('Message %s sent: %s', response.messageId, response.response);
         }
     });
-
 }
