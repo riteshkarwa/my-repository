@@ -1,19 +1,19 @@
 # Redirect with a 200
-/blog / 200
+/blog / 200!
 
 # Redirect with a 200
-/contact / 200
+/contact / 200!
 
 # Redirect with a 200
-/about / 200
+/about / 200!
 
 # Redirect with a 200
-/gallery  / 200
+/gallery  / 200!
 
 # Redirect with a 200
-/terms / 200
+/terms / 200!
 
 # Redirect with a 200
-/send / 200
+/send / 200!
 
-/* / 200
+/* / 200!
