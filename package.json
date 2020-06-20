@@ -20,7 +20,7 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/riteshkarwa/my-repository.git",
   "dependencies": {
-    "angular": "1.7.x",
+    "angular": ">=1.8.0",
     "angular-route": "1.7.x",
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
