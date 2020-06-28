@@ -9,7 +9,7 @@
 
 /* DEMO-SPECIFIC STYLES */
 .typewriter p {
-  font-family: "Alex Brush", cursive;
+  font-family: "Anonymous Pro", monospace;
   text-align: center;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
@@ -17,7 +17,7 @@
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   margin-top: -15px;
   /*letter-spacing: .15em;*/ /* Adjust as needed */
-  animation: typing 8.5s steps(35, end), blink-caret 0.5s step-end infinite;
+  animation: typing 6.5s steps(40, end), blink-caret 0.5s step-end infinite;
 }
 
 /* The typing effect */
