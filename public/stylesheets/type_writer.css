@@ -9,7 +9,9 @@
 
 /* DEMO-SPECIFIC STYLES */
 .typewriter p {
-  font-family: "Anonymous Pro", monospace;
+  font-family: "Carrois Gothic SC", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
   text-align: center;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
