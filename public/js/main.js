@@ -37,7 +37,7 @@ scotchApp.config(function ($routeProvider, $locationProvider) {
     })
 
     // route for the donate page
-    .when("/gallery", {
+    .when("/donate", {
       templateUrl: "donate.html",
       controller: "donateController",
     })
