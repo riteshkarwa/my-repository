@@ -16,4 +16,7 @@
 # Redirect with a 200
 /send / 200!
 
+# Redirect with a 200
+/donate / 200!
+
 /* / 200
