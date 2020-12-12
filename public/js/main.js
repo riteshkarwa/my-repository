@@ -65,6 +65,10 @@ scotchApp.controller("blogController", function ($scope) {
   $scope.message = "Look! I am a blog page.";
 });
 
+scotchApp.controller("donateController", function ($scope) {
+  $scope.message = "Look! I am a donate page.";
+});
+
 scotchApp.controller("termsController", function ($scope) {
   $scope.message = "Look! I am a terms of use page.";
 });
