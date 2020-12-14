@@ -21,10 +21,10 @@
 </div>
 
 <script type="text/javascript">
-
-    $('.js-submit').on('click', function() {
-        preventDefault();
-        $(this).closest('form').submit();
+    $(document).ready(function(){
+        $('.js-submit').on('click', function() {
+            preventDefault();
+            $(this).closest('form').submit();
+        });
     });
-    
 </script>
