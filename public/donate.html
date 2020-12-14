@@ -14,16 +14,14 @@
             <input type='submit' style='display: none;' />
             <button name="submit" type="button" class="btn btn-info js-submit">Donate</button>
             <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-        </form>
-            
-            
+        </form>     
     </p>
 </div>
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('.js-submit').on('click', function() {
-            preventDefault();
+        $('.js-submit').on('click', function(e) {
+            e.preventDefault();
             $(this).closest('form').submit();
         });
     });
