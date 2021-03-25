@@ -327,8 +327,7 @@ figure {
 
 */
 ​.btn-info {
-  background-color: #00e5ee !important;
-  color: #777 !important;
+  color: #777;
 }
 
 .footer_text {
