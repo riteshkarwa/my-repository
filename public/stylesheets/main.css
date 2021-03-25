@@ -1,17 +1,16 @@
 @media only screen and (max-device-width: 480px) {
-  
-/*  #polaroid figure{
+  /*  #polaroid figure{
     position:relative; 
     right:5px;
   }*/
 
-  #header_text_div { 
+  #header_text_div {
     font-size: 0.6em;
     padding-top: 2px;
   }
 
   .alex_brush_font {
-    font-family: 'Alex Brush', cursive;
+    font-family: "Alex Brush", cursive;
     font-size: 2.5em;
   }
 
@@ -25,76 +24,72 @@
   }
 
   div .media-heading {
-    font-family: 'Hind', sans-serif;
+    font-family: "Hind", sans-serif;
     font-size: 28px;
     font-weight: bold;
   }
 
-  div .footer_text{
-  font-size: 10px;
-}
-
+  div .footer_text {
+    font-size: 10px;
+  }
 }
 
 @media only screen and (max-width: 320px) {
-
-  #polaroid figure{
-    position:relative; 
-    right:6px;
+  #polaroid figure {
+    position: relative;
+    right: 6px;
   }
 
-  #header_text_div { 
+  #header_text_div {
     font-size: 0.55em;
   }
-  
 }
 
 @media (max-width: 767px) {
-    .picture-container {
-      margin-left: 15%;
-      margin-bottom: 20px;
-    }
-
-    .alex_brush_font{
-      font-family: 'Alex Brush', cursive;
-      font-size: 3em;
-    }
-
+  .picture-container {
+    margin-left: 15%;
+    margin-bottom: 20px;
   }
 
-@media screen and (min-width: 900px) and (max-width: 1200px) {
-  .alex_brush_font{
-    font-family: 'Alex Brush', cursive;
+  .alex_brush_font {
+    font-family: "Alex Brush", cursive;
     font-size: 3em;
   }
 }
 
-.img-responsive{
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .alex_brush_font {
+    font-family: "Alex Brush", cursive;
+    font-size: 3em;
+  }
+}
+
+.img-responsive {
   margin: 1px;
   padding: 5px;
 }
 
-.likes_count{
+.likes_count {
   margin-right: 7px;
   position: relative;
   top: -2px;
 }
 
-.gallery_image_title{
-  font-family: 'Alex Brush', cursive;
+.gallery_image_title {
+  font-family: "Alex Brush", cursive;
   font-size: 25px;
   position: relative;
   top: -2px;
 }
 
-.adjust-pic{
+.adjust-pic {
   margin-top: 10px;
   margin-bottom: 15px;
 }
 .picture-body {
   border: 1px solid lightgray;
   border-radius: 6px 6px 0px 0px;
-  padding: 4px ;
+  padding: 4px;
   border-bottom: 0px;
 }
 .picture-footer {
@@ -105,24 +100,24 @@
 }
 
 #nav.affix {
-   position: fixed;
-   top: 0;
-   z-index:10;
-   width: 100%;
-   border: 1px solid transparent;
-   -webkit-transition: all .6s ease-in-out;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.6s ease-in-out;
 }
 
-.alex_brush_font{
-  font-family: 'Alex Brush', cursive;
+.alex_brush_font {
+  font-family: "Alex Brush", cursive;
 }
 
 .navbar-text {
-    margin-top: 8px;
-  }
-.navbar-default .navbar-toggle{
-   background-color:#777 ;
-   border-color: #777;
+  margin-top: 8px;
+}
+.navbar-default .navbar-toggle {
+  background-color: #777;
+  border-color: #777;
 }
 
 .navbar-default .navbar-toggle:hover,
@@ -132,16 +127,15 @@
 }
 
 .gallery {
-  padding-bottom:20px; 
-
+  padding-bottom: 20px;
 }
 
-.site-navbar{
+.site-navbar {
   background-color: #00e5ee;
 }
 
-#header_text{
-  font-family: 'Tangerine', serif;
+#header_text {
+  font-family: "Tangerine", serif;
   font-size: 48px;
   text-shadow: 4px 4px 4px #aaa;
 }
@@ -154,33 +148,31 @@
   float: none;
 }
 
-.blog-text { 
-
-  font-family: 'Carrois Gothic SC', sans-serif;
+.blog-text {
+  font-family: "Carrois Gothic SC", sans-serif;
   font-size: 25px;
   font-weight: bold;
-
 }
 
 #header_text_div {
-  width:100%;
-  text-align:center;
-  position:relative;
+  width: 100%;
+  text-align: center;
+  position: relative;
   height: 6em;
   margin-top: 1.2em;
 }
-    
+
 #header_text_div h1 {
   margin: 0;
   padding-top: 0.55em;
   font-size: 4em;
-  font-family: 'Tangerine', serif;
+  font-family: "Tangerine", serif;
 }
 
 #header_text_div .logo_img {
-  position:absolute;
+  position: absolute;
   top: 0;
-  left:1.2em;
+  left: 1.2em;
 }
 
 .logo_img img {
@@ -188,29 +180,29 @@
   padding-bottom: 10px;
 }
 
-.no-margin{
-  margin:0px;
+.no-margin {
+  margin: 0px;
 }
 
-.no-padding{
-  padding:0px;
+.no-padding {
+  padding: 0px;
 }
 
-#list{
-  font-family: 'Tangerine', serif;
+#list {
+  font-family: "Tangerine", serif;
   font-size: 48px;
 }
 
-.media-object{
+.media-object {
   width: 200px;
   height: 200px;
 }
 
-.media-body{
+.media-body {
   padding: 20px;
 }
 
-.img-class{
+.img-class {
   margin-left: 15px;
   margin-top: 10px;
   margin-bottom: 8px;
@@ -219,76 +211,76 @@
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
 }
 
-.site-footer{
+.site-footer {
   background-color: #00e5ee;
-  color:#777;
+  color: #777;
   height: 3em;
 }
 
-.positon-footer-text{
+.positon-footer-text {
   position: relative;
-  top:4px;
+  top: 4px;
 }
 
 .media-heading {
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
   font-size: 40px;
   font-weight: bold;
 }
 
 .media-paragraph {
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
   font-size: 1.7rem;
 }
 
-#main{
+#main {
   margin-bottom: 50px;
   margin-top: 15px;
   clear: both;
 }
 
-
 .img-center {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
-.things{
-   text-align: center;
-   font-family: 'Hind', sans-serif;
+.things {
+  text-align: center;
+  font-family: "Hind", sans-serif;
 }
 
-.footer-social a{ 
-   float: right;
-   padding-left: 20px;
-   text-decoration: none;
-
+.footer-social a {
+  float: right;
+  padding-left: 20px;
+  text-decoration: none;
 }
 
-.fa-facebook{
-  color: #777;
-}
-  
-.fa-pinterest{
+.fa-facebook {
   color: #777;
 }
 
-.fa-etsy{
+.fa-pinterest {
   color: #777;
 }
 
+.fa-etsy {
+  color: #777;
+}
 
-a, a:visited, a:hover, a:active, a:link, .gallery_href {
+a,
+a:visited,
+a:hover,
+a:active,
+a:link,
+.gallery_href {
   color: #b20000;
   text-decoration: none;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-
-.fa-heart:before{
+.fa-heart:before {
   position: relative;
   top: -2px;
 }
-
 
 /*
 .thumbnail img:hover{
@@ -335,107 +327,101 @@ figure {
 
 */
 
-.footer_text{
+.footer_text {
   font-size: 14px;
 }
 
-figcaption { 
-  font-family: 'Hind', sans-serif;
+figcaption {
+  font-family: "Hind", sans-serif;
 }
 
-.img-border{
-  
+.img-border {
   /*border: 5px solid #000;*/
   border-radius: 4px;
 }
 
-
-#polaroid{
-overflow:hidden;
-padding:20px 10px;
-
+#polaroid {
+  overflow: hidden;
+  padding: 20px 10px;
 }
 
-#polaroid figure{
-
-position:relative;
-width:300px;
-margin:10px 10px;
-padding: 7px 8px 10px 8px;
--webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
--moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
-background: #eee6d8;
-background: -webkit-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
-background: -moz-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
-background: -o-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
-background: -ms-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
-background: linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
--webkit-backface-visibility:hidden; /*prevent rotated text being jagged in Chrome and Safari*/
-border-radius: 4px;
+#polaroid figure {
+  position: relative;
+  width: 300px;
+  margin: 10px 10px;
+  padding: 7px 8px 10px 8px;
+  -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75);
+  background: #eee6d8;
+  background: -webkit-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  background: -moz-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  background: -o-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  background: -ms-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  background: linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  -webkit-backface-visibility: hidden; /*prevent rotated text being jagged in Chrome and Safari*/
+  border-radius: 4px;
 }
 
 #polaroid figure:nth-child(even) {
--webkit-transform:rotate(2deg);
--moz-transform: rotate(2deg);
--o-transform: rotate(2deg);
--ms-transform: rotate(2deg);
-transform: rotate(2deg);
--webkit-backface-visibility:hidden; /*prevent rotated text being jagged in Chrome and Safari*/
--webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
--moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
-box-shadow: -4px 4px 8px -4px rgba(0, 0, 0, .75);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+  -webkit-backface-visibility: hidden; /*prevent rotated text being jagged in Chrome and Safari*/
+  -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 4px 8px -4px rgba(0, 0, 0, 0.75);
 }
 
 #polaroid figure:before {
-content: '';
-display: block;
-position: absolute;
-left:55px;
-top: -15px;
-width: 75px;
-height: 25px;
-background-color: rgba(222,220,198,0.7);
--webkit-transform: rotate(-12deg);
--moz-transform: rotate(-12deg);
--o-transform: rotate(-12deg);
--ms-transform: rotate(-12deg);
+  content: "";
+  display: block;
+  position: absolute;
+  left: 55px;
+  top: -15px;
+  width: 75px;
+  height: 25px;
+  background-color: rgba(222, 220, 198, 0.7);
+  -webkit-transform: rotate(-12deg);
+  -moz-transform: rotate(-12deg);
+  -o-transform: rotate(-12deg);
+  -ms-transform: rotate(-12deg);
 }
 
 #polaroid .right-tape:before {
-left:150px;
-top: -15px;
-width: 75px;
-height: 25px;
--webkit-transform: rotate(12deg);
--moz-transform: rotate(12deg);
--o-transform: rotate(12deg);
--ms-transform: rotate(12deg);
+  left: 150px;
+  top: -15px;
+  width: 75px;
+  height: 25px;
+  -webkit-transform: rotate(12deg);
+  -moz-transform: rotate(12deg);
+  -o-transform: rotate(12deg);
+  -ms-transform: rotate(12deg);
 }
 
-#polaroid figcaption{
-text-align:center;
-font-family: 'Reenie Beanie', cursive; /*Reenie Beanie is available through Google Webfonts http://code.google.com/webfonts/specimen/Reenie+Beanie*/
-font-size:1.6em;
-color:#000000;
-letter-spacing:0.09em;
-margin-top:5px; 
+#polaroid figcaption {
+  text-align: center;
+  font-family: "Reenie Beanie", cursive; /*Reenie Beanie is available through Google Webfonts http://code.google.com/webfonts/specimen/Reenie+Beanie*/
+  font-size: 1.6em;
+  color: #000000;
+  letter-spacing: 0.09em;
+  margin-top: 5px;
 }
 
 /**IE Hacks - see http://css3pie.com/ for more info on how to use CS3Pie and to download the latest version**/
-#polaroid figure{
--pie-background: linear-gradient(#ede1c9, #fef8e2 20%, #f2ebde 60%);
-behavior: url(assets/pie/PIE.htc);
-position:relative; /*required to make PIE work*/
-padding-top:10px\9;
-padding-right:10px\9;
+#polaroid figure {
+  -pie-background: linear-gradient(#ede1c9, #fef8e2 20%, #f2ebde 60%);
+  behavior: url(assets/pie/PIE.htc);
+  position: relative; /*required to make PIE work*/
+  padding-top: 10px\9;
+  padding-right: 10px\9;
 }
 
-#polaroid figure a{
-  text-decoration:none;
+#polaroid figure a {
+  text-decoration: none;
 }
-
-
 
 /*  Home Page css */
 
@@ -447,106 +433,109 @@ p {
   margin: 0 0 0em;
 }
 .comment {
-    overflow: hidden;
-    padding: 0 0 1em;
-    border-bottom: 1px solid #ddd;
-    margin: 0 0 1em;
-    *zoom: 1;
+  overflow: hidden;
+  padding: 0 0 1em;
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 1em;
+  *zoom: 1;
 }
 
 .comment-img {
-    float: left;
-    margin-right: 33px;
-    border-radius: 5px;
-    overflow: hidden;
+  float: left;
+  margin-right: 33px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .comment-img img {
-    display: block;
+  display: block;
 }
 
 .comment-body {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .comment .text {
-    padding: 10px;
-    border: 1px solid #e5e5e5;
-    border-radius: 5px;
-    background: #00e5ee;
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  background: #00e5ee;
 }
 
 .imagedropshadow {
-    padding: 5px;
-    border: solid 1px #EFEFEF;
+  padding: 5px;
+  border: solid 1px #efefef;
 }
 
-.imagedropshadow:hover{
-    border: solid 1px #CCC;
-    -moz-box-shadow: 1px 1px 5px #999;
-    -webkit-box-shadow: 1px 1px 5px #999;
-    box-shadow: 1px 1px 5px #999;
+.imagedropshadow:hover {
+  border: solid 1px #ccc;
+  -moz-box-shadow: 1px 1px 5px #999;
+  -webkit-box-shadow: 1px 1px 5px #999;
+  box-shadow: 1px 1px 5px #999;
 }
 
 .comment .text p:last-child {
-    margin: 0;
+  margin: 0;
 }
 
 .comment .attribution {
-    margin: 0.5em 0 0;
-    font-size: 14px;
-    color: #666;
+  margin: 0.5em 0 0;
+  font-size: 14px;
+  color: #666;
 }
 
 /* Decoration */
 
 .comments,
 .comment {
-    position: relative;
+  position: relative;
 }
 
 .comments:before,
 .comment:before,
 .comment .text:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 118px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 118px;
 }
 
 .comments:before {
-    width: 3px;
-    top: -20px;
-    bottom: 0px;
-    background: rgba(0,0,0,0.1);
+  width: 3px;
+  top: -20px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .comment:before {
-    width: 12px;
-    height: 12px;
-    left:119px;
-    border: 3px solid #fff;
-    border-radius: 100px;
-    margin: 16px 0 0 -6px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
-    background: #ccc;
+  width: 12px;
+  height: 12px;
+  left: 119px;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  margin: 16px 0 0 -6px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  background: #ccc;
 }
 
 .comment:hover:before {
-    background: red;
+  background: red;
 }
 
 .comment .text:before {
-    top: 18px;
-    left: 128px;
-    width: 9px;
-    height: 9px;
-    border-width: 0 0 1px 1px;
-    border-style: solid;
-    border-color: #e5e5e5;
-    background: #00e5ee;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-}​
+  top: 18px;
+  left: 128px;
+  width: 9px;
+  height: 9px;
+  border-width: 0 0 1px 1px;
+  border-style: solid;
+  border-color: #e5e5e5;
+  background: #00e5ee;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+​ .donate_button {
+  background: #00e5ee;
+}
