@@ -326,6 +326,10 @@ figure {
 }
 
 */
+​.donate_button {
+  background-color: #00e5ee !important;
+  color: #777 !important;
+}
 
 .footer_text {
   font-size: 14px;
@@ -535,9 +539,4 @@ p {
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
-}
-
-​ .donate_button {
-  background-color: #00e5ee in !important;
-  color: #777 i !important;
 }
