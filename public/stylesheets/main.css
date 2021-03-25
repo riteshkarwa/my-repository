@@ -538,5 +538,6 @@ p {
 }
 
 ​ .donate_button {
-  background: #00e5ee;
+  background-color: #00e5ee;
+  color: #777;
 }
