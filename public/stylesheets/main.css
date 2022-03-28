@@ -154,6 +154,12 @@
   font-weight: bold;
 }
 
+.donte-page-text{
+  font-family: 'Prompt', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
 #header_text_div {
   width: 100%;
   text-align: center;
