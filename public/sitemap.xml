@@ -8,14 +8,16 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
   <url>
-    <loc>https://southernsunshineandroses.netlify.com/</loc>
+    <loc>https://southernsunshineandroses.netlify.app/</loc>
+    <lastmod>2022-03-29T00:30:50+00:00</lastmod>
+    <priority>1.00</priority>
     <image:image>
       <image:loc>https://res.cloudinary.com/dkjcddqy0/image/upload/v1510632650/23600973_10211213494155050_426846348_o_ayaa32.jpg</image:loc>
       <image:caption>Southern Sunshine and Roses</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://southernsunshineandroses.netlify.com/gallery</loc>
+    <loc>https://southernsunshineandroses.netlify.app/gallery</loc>
     <image:image>
       <image:loc>https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885824/frenchstand_dtiyhu.jpg</image:loc>
       <image:caption>French Provincial Night Stand</image:caption>
@@ -74,15 +76,23 @@
     </image:image>  
   </url>
   <url>
-    <loc>https://southernsunshineandroses.netlify.com/contact</loc>
+    <loc>https://southernsunshineandroses.netlify.app/contact</loc>
+    <lastmod>2022-03-29T00:30:50+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://southernsunshineandroses.netlify.app/donate</loc>
+    <lastmod>2022-03-29T00:30:50+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://southernsunshineandroses.netlify.com/terms</loc>
+    <loc>https://southernsunshineandroses.netlify.app/terms</loc>
+    <lastmod>2022-03-29T00:30:50+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://southernsunshineandroses.netlify.com/blog</loc>
+    <loc>https://southernsunshineandroses.netlify.app/blog</loc>
+    <lastmod>2022-03-29T00:30:50+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
 </urlset>
