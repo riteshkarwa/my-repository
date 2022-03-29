@@ -31,7 +31,7 @@
         $('.add-color').html(function (i, text, colors) {
           return $.map(text.split(' '), function (word, colors) {
              return '<span style="color:'
-                 + colors[Math.floor(Math.random() * colors.length)];
+                 + colors[Math.floor(Math.random() * colors.length)]
                  + '">' + word + '</span>';
           }).join(' ');
         }); 
