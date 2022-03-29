@@ -2,7 +2,7 @@
     <p class="donte-page-text">
        Help Us Keep The Website Going!!!
     </p>
-    <p class="donte-page-text">
+    <p class="donte-page-text add-color">
         I hope you had a good time browsing the website. We are constantly working on the website,
         making it easy to use for our customers. If you wish to help Southern Susnhine And Roses, 
         you can do so by donating any amount using the "Donate" Button. It is your love and 
@@ -24,5 +24,17 @@
             e.preventDefault();
             $(this).closest('form').submit();
         });
+        
+        //var colors=["red","orange","blue","#FFE303", "green" ,"#4b0082", "#9B30FF"];
+     var colors = ["#333"];
+     var random_color= colors[Math.floor(Math.random() * colors.length)];
+    
+        $('.add-color').html(function (i, text) {
+          return $.map(text.split(' '), function (word) {
+             return '<span style="color:'
+                 + random_color
+                 + '">' + word + '</span>';
+          }).join(' ');
+        }); 
     });
 </script>
