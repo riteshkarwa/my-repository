@@ -28,8 +28,8 @@
         var colors=["red","#ff7003","blue","#FFE303", "green" ,"#4b0082", "#9B30FF","#e203ff"];
         //var random_color= colors[Math.floor(Math.random() * colors.length)];
     
-        $('.add-color').html(function (i, text, colors) {
-          return $.map(text.split(' '), function (word, colors) {
+        $('.add-color').html(function (i, text) {
+          return $.map(text.split(' '), function (word) {
              return '<span style="color:'
                  + colors[Math.floor(Math.random() * colors.length)]
                  + '">' + word + '</span>';
