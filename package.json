@@ -28,7 +28,7 @@
     "cors": "^2.8.4",
     "dotenv": "^8.2.0",
     "encoding": "^0.1.12",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "faunadb": "^2.13.0",
     "mysql": "^2.15.0",
     "netlify-lambda": "^1.6.3",
