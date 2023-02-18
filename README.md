@@ -1,1 +1,1 @@
-# Code base for Southern Sunshine and Roses website
+# Codebase for Southern Sunshine and Roses website
