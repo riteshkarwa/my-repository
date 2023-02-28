@@ -18,6 +18,8 @@
   </url>
   <url>
     <loc>https://southernsunshineandroses.netlify.app/gallery</loc>
+    <lastmod>2022-03-29T00:30:50+00:00</lastmod>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://res.cloudinary.com/dkjcddqy0/image/upload/v1463885824/frenchstand_dtiyhu.jpg</image:loc>
       <image:caption>French Provincial Night Stand</image:caption>
@@ -69,6 +71,8 @@
   </url>
   <url>
     <loc>https://southernsunshineandroses.netlify.com/about</loc>
+    <lastmod>2022-03-29T00:30:50+00:00</lastmod>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://res.cloudinary.com/dkjcddqy0/image/upload/v1465082221/photo_y3c3bb.jpg</image:loc>
       <image:caption>Owner of Southern Sunshine and Roses Chelsea Felter</image:caption>
